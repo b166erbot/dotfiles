@@ -36,14 +36,14 @@
         <value type="int" value="16"/>
         <value type="int" value="17"/>
         <value type="int" value="18"/>
+        <value type="int" value="27"/>
         <value type="int" value="7"/>
         <value type="int" value="25"/>
-        <value type="int" value="19"/>
-        <value type="int" value="20"/>
         <value type="int" value="9"/>
         <value type="int" value="23"/>
         <value type="int" value="24"/>
         <value type="int" value="26"/>
+        <value type="int" value="20"/>
         <value type="int" value="21"/>
         <value type="int" value="22"/>
       </property>
@@ -61,7 +61,9 @@
       <property name="expand" type="bool" value="true"/>
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-4" type="string" value="pager"/>
+    <property name="plugin-4" type="string" value="pager">
+      <property name="rows" type="uint" value="1"/>
+    </property>
     <property name="plugin-5" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
@@ -69,6 +71,7 @@
       <property name="show-frame" type="bool" value="false"/>
       <property name="square-icons" type="bool" value="true"/>
       <property name="names-ordered" type="array">
+        <value type="string" value="clipman"/>
         <value type="string" value="telegramdesktop"/>
         <value type="string" value="simplescreenrecorder"/>
         <value type="string" value="notas"/>
@@ -81,6 +84,7 @@
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
+      <property name="mpris-players" type="string" value="chromium.instance740"/>
     </property>
     <property name="plugin-10" type="string" value="notification-plugin"/>
     <property name="plugin-11" type="string" value="separator">
@@ -120,11 +124,6 @@
         <value type="string" value="15913191952.desktop"/>
       </property>
     </property>
-    <property name="plugin-19" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15913191953.desktop"/>
-      </property>
-    </property>
     <property name="plugin-20" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="15913191954.desktop"/>
@@ -162,6 +161,11 @@
     <property name="plugin-26" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="15913206756.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-27" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15914599201.desktop"/>
       </property>
     </property>
   </property>

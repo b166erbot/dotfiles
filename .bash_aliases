@@ -15,4 +15,4 @@ export PATH=$PATH:/usr/bin/snap
 export PYTHONSTARTUP=/home/none/.pythonrc
 
 # ALIASES
-
+alias config='/usr/bin/git --git-dir=/home/none/.cfg/ --work-tree=/home/none' # git dotfiles

@@ -106,4 +106,4 @@ fi
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 # export SDKMAN_DIR="/home/none/.sdkman"
 # [[ -s "/home/none/.sdkman/bin/sdkman-init.sh" ]] && source "/home/none/.sdkman/bin/sdkman-init.sh"
-alias config='/usr/bin/git --git-dir=/home/none/.cfg/ --work-tree=/home/none'
+
