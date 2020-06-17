@@ -1,0 +1,5 @@
+'.platform-linux atom-text-editor:not(mini)':
+    'alt-shift-up': 'mult-cursor:move-last-cursor-up'
+    'alt-shift-down': 'mult-cursor:move-last-cursor-down'
+    'alt-shift-right': 'multi-cursor:move-last-cursor-right'
+    'alt-shift-left': 'multi-cursor:move-last-cursor-left'
