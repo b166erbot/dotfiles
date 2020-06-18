@@ -13,6 +13,8 @@
       <property name="size" type="uint" value="26"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="29"/>
+        <value type="int" value="28"/>
+        <value type="int" value="1"/>
         <value type="int" value="2"/>
         <value type="int" value="3"/>
         <value type="int" value="4"/>
@@ -181,5 +183,9 @@
       </property>
     </property>
     <property name="plugin-29" type="string" value="whiskermenu"/>
+    <property name="plugin-1" type="string" value="xfce4-verve-plugin"/>
+    <property name="plugin-28" type="string" value="separator">
+      <property name="style" type="uint" value="2"/>
+    </property>
   </property>
 </channel>
