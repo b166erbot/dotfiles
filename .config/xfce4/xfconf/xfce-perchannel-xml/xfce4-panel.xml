@@ -40,7 +40,7 @@
         <value type="int" value="19"/>
         <value type="int" value="27"/>
         <value type="int" value="7"/>
-        <value type="int" value="25"/>
+        <value type="int" value="30"/>
         <value type="int" value="9"/>
         <value type="int" value="23"/>
         <value type="int" value="24"/>
@@ -154,11 +154,6 @@
         <value type="string" value="15913206344.desktop"/>
       </property>
     </property>
-    <property name="plugin-25" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15913206655.desktop"/>
-      </property>
-    </property>
     <property name="plugin-26" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="15913206756.desktop"/>
@@ -186,6 +181,11 @@
     <property name="plugin-1" type="string" value="xfce4-verve-plugin"/>
     <property name="plugin-28" type="string" value="separator">
       <property name="style" type="uint" value="2"/>
+    </property>
+    <property name="plugin-30" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15926097121.desktop"/>
+      </property>
     </property>
   </property>
 </channel>
