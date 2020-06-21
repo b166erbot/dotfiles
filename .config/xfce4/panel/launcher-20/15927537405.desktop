@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Glade
+Comment=Criar ou abrir designs de interface de utilizador para aplicações GTK+
+Exec=glade %F
+Icon=glade
+Path=
+Terminal=false
+StartupNotify=true

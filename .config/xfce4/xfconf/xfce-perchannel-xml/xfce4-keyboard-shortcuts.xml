@@ -31,16 +31,15 @@
       <property name="&lt;Alt&gt;F2" type="string" value="xfce4-appfinder --collapsed">
         <property name="startup-notify" type="bool" value="true"/>
       </property>
-      <property name="XF86Mail" type="string" value="exo-open --launch MailReader"/>
-      <property name="XF86WWW" type="string" value="exo-open --launch WebBrowser"/>
+      <property name="&lt;Alt&gt;F1" type="string" value="xfce4-popup-applicationsmenu"/>
       <property name="&lt;Super&gt;p" type="string" value="xfce4-display-settings --minimal"/>
       <property name="override" type="bool" value="true"/>
       <property name="&lt;Primary&gt;apostrophe" type="string" value="exo-open --launch TerminalEmulator"/>
-      <property name="Print" type="string" value="xfce4-screenshooter -f -c"/>
-      <property name="&lt;Shift&gt;Print" type="string" value="xfce4-screenshooter -r -c"/>
-      <property name="&lt;Primary&gt;&lt;Shift&gt;Escape" type="string" value="xfce4-taskmanager"/>
-      <property name="&lt;Primary&gt;dead_perispomeni" type="string" value="xfce4-popup-applicationsmenu"/>
       <property name="Super_L" type="string" value="xfce4-popup-whiskermenu"/>
+      <property name="Print" type="string" value="xfce4-screenshooter -fc"/>
+      <property name="&lt;Shift&gt;Print" type="string" value="xfce4-screenshooter -r"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;Print" type="string" value="xfce4-screenshooter -rc"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;Escape" type="string" value="gnome-system-monitor"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

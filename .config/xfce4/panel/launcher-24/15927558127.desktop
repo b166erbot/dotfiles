@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Snap Store
+Comment=Adiciona, remove ou atualiza programas neste computador
+Exec=env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/snap-store_snap-store.desktop /snap/bin/snap-store %U
+Icon=snap-store
+Path=
+Terminal=false
+StartupNotify=false
