@@ -1,5 +1,5 @@
 favorites=exo-web-browser.desktop,exo-mail-reader.desktop,exo-file-manager.desktop,exo-terminal-emulator.desktop
-recent=telegramdesktop.desktop,ccsm.desktop,simple-scan.desktop,org.gnome.Software.desktop,simplescreenrecorder.desktop,exo-file-manager.desktop,xfce-session-settings.desktop,light-locker-settings.desktop,zsnes.desktop,snap-store_snap-store.desktop
+recent=zsnes.desktop,telegramdesktop.desktop,xfce4-screensaver-preferences.desktop,lightdm-gtk-greeter-settings.desktop,simple-scan.desktop,org.gnome.Software.desktop,simplescreenrecorder.desktop,exo-file-manager.desktop,xfce-session-settings.desktop,light-locker-settings.desktop
 button-icon=ubuntu-logo-icon
 button-single-row=false
 show-button-title=true
