@@ -1,0 +1,4 @@
+'.source.cs':
+    'Snippet Name':
+        'prefix:': 'hi'
+        'body': 'Hello-World!($1)'
