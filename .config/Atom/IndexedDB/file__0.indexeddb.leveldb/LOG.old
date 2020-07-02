@@ -1,0 +1,6 @@
+2020/06/30-12:02:22.172 dc4 Reusing MANIFEST /home/none/.config/Atom/IndexedDB/file__0.indexeddb.leveldb/MANIFEST-000001
+2020/06/30-12:02:22.173 dc4 Recovering log #307
+2020/06/30-12:02:22.243 dc4 Reusing old log /home/none/.config/Atom/IndexedDB/file__0.indexeddb.leveldb/000307.log 
+2020/06/30-12:16:17.809 f66 Level-0 table #312: started
+2020/06/30-12:16:17.894 f66 Level-0 table #312: 1357250 bytes OK
+2020/06/30-12:16:17.918 f66 Delete type=0 #307
