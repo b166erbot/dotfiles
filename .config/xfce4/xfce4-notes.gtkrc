@@ -1,2 +1,2 @@
-gtk_color_scheme = "notes_fg_color:#f7f7ebeb9696\nnotes_bg_color:#690963ef3fc9\nnotes_base_color:#f7f7ebeb9696\nnotes_text_color:#690963ef3fc9\nnotes_selected_bg_color:#88dc8236531d\nnotes_selected_fg_color:#f7f7ebeb9696"
+gtk_color_scheme = "notes_fg_color:#9696f7f7ce6f\nnotes_bg_color:#3f4d683c56c6\nnotes_base_color:#9696f7f7ce6f\nnotes_text_color:#3f4d683c56c6\nnotes_selected_bg_color:#52cf885b7185\nnotes_selected_fg_color:#9696f7f7ce6f"
 include "/usr/share/xfce4-notes-plugin/gtk-2.0/notes.gtkrc"

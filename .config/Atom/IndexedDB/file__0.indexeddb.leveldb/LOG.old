@@ -1,3 +1,12 @@
-2020/07/01-09:16:19.010 9c7 Reusing MANIFEST /home/none/.config/Atom/IndexedDB/file__0.indexeddb.leveldb/MANIFEST-000001
-2020/07/01-09:16:19.010 9c7 Recovering log #311
-2020/07/01-09:16:19.213 9c7 Reusing old log /home/none/.config/Atom/IndexedDB/file__0.indexeddb.leveldb/000311.log 
+2020/07/07-14:19:36.372 d48 Reusing MANIFEST /home/none/.config/Atom/IndexedDB/file__0.indexeddb.leveldb/MANIFEST-000001
+2020/07/07-14:19:36.372 d48 Recovering log #318
+2020/07/07-14:19:36.621 d48 Reusing old log /home/none/.config/Atom/IndexedDB/file__0.indexeddb.leveldb/000318.log 
+2020/07/07-14:26:00.172 120c Level-0 table #323: started
+2020/07/07-14:26:00.270 120c Level-0 table #323: 1903838 bytes OK
+2020/07/07-14:26:00.301 120c Delete type=0 #318
+2020/07/07-14:37:13.600 120c Compacting 1@1 + 1@2 files
+2020/07/07-14:37:13.692 120c Generated table #324@1: 2387 keys, 295961 bytes
+2020/07/07-14:37:13.692 120c Compacted 1@1 + 1@2 files => 295961 bytes
+2020/07/07-14:37:13.722 120c compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/07/07-14:37:13.722 120c Delete type=2 #320
+2020/07/07-14:37:13.722 120c Delete type=2 #323

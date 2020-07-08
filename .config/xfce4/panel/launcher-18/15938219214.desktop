@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=firefox privado
+Comment=aba do firefox privada
+Exec=firefox --private-window
+Icon=firefox-trunk
+Path=
+Terminal=false
+StartupNotify=false

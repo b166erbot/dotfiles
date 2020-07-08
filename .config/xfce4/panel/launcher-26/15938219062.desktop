@@ -1,0 +1,15 @@
+[Desktop Entry]
+X-SnapInstanceName=atom
+Name=Atom
+Comment=A hackable text editor for the 21st Century.
+GenericName=Text Editor
+Exec=atom
+Icon=/snap/atom/257/usr/share/pixmaps/atom.png
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Utility;TextEditor;Development;
+MimeType=text/plain;
+StartupWMClass=atom
+X-XFCE-Source=file:///var/lib/snapd/desktop/applications/atom_atom.desktop
+Path=
+Terminal=false

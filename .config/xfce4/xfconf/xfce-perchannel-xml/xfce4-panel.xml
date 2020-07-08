@@ -36,14 +36,13 @@
         <value type="int" value="15"/>
         <value type="int" value="16"/>
         <value type="int" value="23"/>
+        <value type="int" value="19"/>
         <value type="int" value="26"/>
+        <value type="int" value="29"/>
         <value type="int" value="20"/>
         <value type="int" value="18"/>
-        <value type="int" value="17"/>
-        <value type="int" value="19"/>
-        <value type="int" value="29"/>
         <value type="int" value="27"/>
-        <value type="int" value="28"/>
+        <value type="int" value="17"/>
         <value type="int" value="1"/>
         <value type="int" value="24"/>
         <value type="int" value="21"/>
@@ -99,22 +98,22 @@
     <property name="plugin-16" type="string" value="separator"/>
     <property name="plugin-17" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="15927534791.desktop"/>
+        <value type="string" value="15938220015.desktop"/>
       </property>
     </property>
     <property name="plugin-18" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="15927536073.desktop"/>
+        <value type="string" value="15938219214.desktop"/>
       </property>
     </property>
     <property name="plugin-19" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="15927536564.desktop"/>
+        <value type="string" value="15939575231.desktop"/>
       </property>
     </property>
     <property name="plugin-20" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="15927537405.desktop"/>
+        <value type="string" value="15938219143.desktop"/>
       </property>
     </property>
     <property name="plugin-21" type="string" value="separator"/>
@@ -129,40 +128,40 @@
     </property>
     <property name="plugin-23" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="15927538296.desktop"/>
+        <value type="string" value="15938218941.desktop"/>
       </property>
     </property>
     <property name="plugin-24" type="string" value="launcher">
       <property name="disable-tooltips" type="bool" value="false"/>
       <property name="items" type="array">
-        <value type="string" value="15928333441.desktop"/>
+        <value type="string" value="15938220236.desktop"/>
       </property>
     </property>
     <property name="plugin-26" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="15927607238.desktop"/>
+        <value type="string" value="15938219062.desktop"/>
       </property>
     </property>
     <property name="plugin-27" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="15927607359.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-28" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="159276076610.desktop"/>
+        <value type="string" value="159382232111.desktop"/>
       </property>
     </property>
     <property name="plugin-29" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="159276191511.desktop"/>
+        <value type="string" value="159382216810.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-7" type="string" value="xfce4-notes-plugin"/>
+    <property name="notes" type="empty">
+      <property name="global" type="empty">
+        <property name="background-color" type="string" value="#9696f7f7ce6f"/>
       </property>
     </property>
     <property name="plugin-1" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="15930947881.desktop"/>
+        <value type="string" value="15941558951.desktop"/>
       </property>
     </property>
-    <property name="plugin-7" type="string" value="xfce4-notes-plugin"/>
   </property>
 </channel>
