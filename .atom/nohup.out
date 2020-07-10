@@ -1,5 +1,0 @@
-bash: impossível definir grupo do processo do terminal (-1): ioctl inapropriado para dispositivo
-bash: nenhum controle de trabalho neste shell
-Attempting to call a function in a renderer window that has been closed or released.
-Function provided here: worker.js:79:22
-Remote event names: destroyed, crashed
