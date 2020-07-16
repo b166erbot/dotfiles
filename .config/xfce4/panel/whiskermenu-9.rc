@@ -1,5 +1,5 @@
 favorites=exo-web-browser.desktop,exo-mail-reader.desktop,exo-file-manager.desktop,exo-terminal-emulator.desktop
-recent=telegramdesktop.desktop,zsnes.desktop,mousepad.desktop,xfce-mouse-settings.desktop,org.gnome.Boxes.desktop,org.gnome.Software.desktop,exo-file-manager.desktop,org.xfce.Parole.desktop,usb-creator-gtk.desktop,org.gnome.DiskUtility.desktop
+recent=telegramdesktop.desktop,org.gnome.DiskUtility.desktop,software-properties-drivers.desktop,gimp.desktop,org.gnome.Calculator.desktop,mate-calc.desktop,org.gnome.seahorse.Application.desktop,mousepad.desktop,zsnes.desktop,org.bluesabre.SgtLauncher.desktop
 button-icon=ubuntu-logo-icon
 button-single-row=false
 show-button-title=true

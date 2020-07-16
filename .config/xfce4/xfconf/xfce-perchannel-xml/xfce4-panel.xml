@@ -22,6 +22,7 @@
         <value type="int" value="10"/>
         <value type="int" value="11"/>
         <value type="int" value="12"/>
+        <value type="int" value="28"/>
         <value type="int" value="14"/>
         <value type="int" value="13"/>
         <value type="int" value="8"/>
@@ -41,6 +42,7 @@
         <value type="int" value="29"/>
         <value type="int" value="20"/>
         <value type="int" value="18"/>
+        <value type="int" value="25"/>
         <value type="int" value="27"/>
         <value type="int" value="17"/>
         <value type="int" value="1"/>
@@ -66,6 +68,7 @@
       <property name="show-frame" type="bool" value="false"/>
       <property name="square-icons" type="bool" value="true"/>
       <property name="names-ordered" type="array">
+        <value type="string" value="gerenciador de tarefas"/>
         <value type="string" value="skypeforlinux"/>
         <value type="string" value="simplescreenrecorder"/>
         <value type="string" value="vlc"/>
@@ -162,6 +165,14 @@
       <property name="items" type="array">
         <value type="string" value="15941558951.desktop"/>
       </property>
+    </property>
+    <property name="plugin-25" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15944731821.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-28" type="string" value="separator">
+      <property name="style" type="uint" value="2"/>
     </property>
   </property>
 </channel>
