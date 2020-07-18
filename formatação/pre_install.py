@@ -3,9 +3,7 @@ from pathlib import Path
 
 
 def main():
-    local = Path(
-        '~/python scripts/minhas ferramentas para o sistema/formatação'
-    ).expanduser()
+    local = Path(__file__).parent
 
     # backup pacotes atom
     sy(f"apm list --installed --bare > {local}/atom.pacotes")

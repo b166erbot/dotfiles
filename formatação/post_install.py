@@ -1,6 +1,7 @@
 from os import system as sy
 from os import getuid
 from pathlib import Path
+from os import chdir
 
 from .interfaces import interfaces
 
@@ -20,9 +21,8 @@ def verificar_root() -> None:
 
 def main():
     verificar_root()
-    local = Path(
-    '~/python scripts/minhas ferramentas para o sistema/formatação'
-    ).expanduser()
+    local = Path(__file__).parent
+    chdir(aqui)
 
     # atualizando cache
     sy('apt update')
