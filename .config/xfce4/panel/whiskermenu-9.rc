@@ -1,5 +1,5 @@
 favorites=exo-web-browser.desktop,exo-mail-reader.desktop,exo-file-manager.desktop,exo-terminal-emulator.desktop
-recent=xfce-session-settings.desktop,mousepad.desktop,telegramdesktop.desktop,org.gnome.DiskUtility.desktop,software-properties-drivers.desktop,gimp.desktop,org.gnome.Calculator.desktop,mate-calc.desktop,org.gnome.seahorse.Application.desktop,zsnes.desktop
+recent=telegramdesktop.desktop,software-properties-drivers.desktop,gnome-language-selector.desktop,org.gnome.Logs.desktop,light-locker-settings.desktop,xfce-session-settings.desktop,mousepad.desktop,org.gnome.DiskUtility.desktop,gimp.desktop,org.gnome.Calculator.desktop
 button-icon=ubuntu-logo-icon
 button-single-row=false
 show-button-title=true
@@ -41,7 +41,7 @@ show-command-suspend=true
 command-hibernate=xfce4-session-logout --hibernate
 show-command-hibernate=false
 command-logout=xfce4-session-logout
-show-command-logout=true
+show-command-logout=false
 command-menueditor=menulibre
 show-command-menueditor=true
 command-profile=mugshot

@@ -27,6 +27,10 @@
         <value type="int" value="13"/>
         <value type="int" value="8"/>
       </property>
+      <property name="mode" type="uint" value="0"/>
+      <property name="length-adjust" type="bool" value="true"/>
+      <property name="nrows" type="uint" value="1"/>
+      <property name="background-style" type="uint" value="0"/>
     </property>
     <property name="panel-2" type="empty">
       <property name="autohide-behavior" type="uint" value="2"/>
@@ -43,6 +47,7 @@
         <value type="int" value="20"/>
         <value type="int" value="18"/>
         <value type="int" value="25"/>
+        <value type="int" value="30"/>
         <value type="int" value="27"/>
         <value type="int" value="17"/>
         <value type="int" value="1"/>
@@ -92,7 +97,9 @@
       <property name="style" type="uint" value="2"/>
       <property name="expand" type="bool" value="false"/>
     </property>
-    <property name="plugin-12" type="string" value="clock"/>
+    <property name="plugin-12" type="string" value="clock">
+      <property name="mode" type="uint" value="2"/>
+    </property>
     <property name="plugin-13" type="string" value="separator">
       <property name="style" type="uint" value="2"/>
     </property>
@@ -173,6 +180,11 @@
     </property>
     <property name="plugin-28" type="string" value="separator">
       <property name="style" type="uint" value="2"/>
+    </property>
+    <property name="plugin-30" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15950930541.desktop"/>
+      </property>
     </property>
   </property>
 </channel>

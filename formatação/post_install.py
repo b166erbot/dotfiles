@@ -30,7 +30,7 @@ def main():
     # instalando programas
     programas = [
         'python3-dev', 'glade', 'gimp', 'gnome-sistem-monitor', 'pycodestyle',
-        'bpython3', 'net-tools', 'simplescreenrecorder', 'papirus-icon-theme',
+        'bpython', 'net-tools', 'simplescreenrecorder', 'papirus-icon-theme',
         'atom', 'zeal', 'usb-creator-gtk', 'arc-theme', 'gnome-disk-utility',
         'gnome-software', 'snapd', 'gnome-software-plugin-snap',
         'bash-completion', 'gnome-boxes', 'telegram-desktop', 'python3-pip'
