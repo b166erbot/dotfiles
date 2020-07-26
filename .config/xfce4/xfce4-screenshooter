@@ -1,7 +1,7 @@
-app=gimp-2.10
+app=eog
 last_user=
-screenshot_dir=file:///home/none/Imagens
-action=2
+screenshot_dir=file:/home/none/python scripts/katoolin/preview
+action=1
 delay=0
 region=1
 show_mouse=1

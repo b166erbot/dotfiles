@@ -18,3 +18,16 @@ namespace SoloLearn
    }
 }
 """
+
+'.souce.java':
+    'init':
+        'body': """package meuprograma;
+
+        public class meuprograma
+        {
+            public static void main(String [] args)
+            {
+
+            }
+        }
+"""

@@ -40,6 +40,7 @@
 ; (gtk_accel_path "<Actions>/ThunarStandardView/rename" "F2")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/paste" "<Primary>v")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/duplicate" "")
+; (gtk_accel_path "<Actions>/ThunarBookmarks/ebd52d0b856fee5f41755abb1a83b782" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/zoom-out" "<Primary>minus")
 ; (gtk_accel_path "<Actions>/ThunarLauncher/sendto-desktop" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/view-location-selector-toolbar" "")
