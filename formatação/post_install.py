@@ -29,7 +29,7 @@ def main():
 
     # instalando programas
     programas = [
-        'python3-dev', 'glade', 'gimp', 'pycodestyle',
+        'python3-dev', 'glade', 'gimp', 'pycodestyle', 'git',
         'bpython', 'net-tools', 'simplescreenrecorder', 'papirus-icon-theme',
         'zeal', 'usb-creator-gtk', 'arc-theme', 'gnome-disk-utility',
         'gnome-software', 'snapd', 'gnome-software-plugin-snap',
