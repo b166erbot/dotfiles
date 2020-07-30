@@ -3,7 +3,7 @@ from os import getuid
 from pathlib import Path
 from os import chdir
 
-from .interfaces import interfaces
+from interfaces import interfaces
 
 
 def root() -> bool:
@@ -22,16 +22,16 @@ def verificar_root() -> None:
 def main():
     verificar_root()
     local = Path(__file__).parent
-    chdir(aqui)
+    chdir(local)
 
     # atualizando cache
     sy('apt update')
 
     # instalando programas
     programas = [
-        'python3-dev', 'glade', 'gimp', 'gnome-sistem-monitor', 'pycodestyle',
+        'python3-dev', 'glade', 'gimp', 'pycodestyle',
         'bpython', 'net-tools', 'simplescreenrecorder', 'papirus-icon-theme',
-        'atom', 'zeal', 'usb-creator-gtk', 'arc-theme', 'gnome-disk-utility',
+        'zeal', 'usb-creator-gtk', 'arc-theme', 'gnome-disk-utility',
         'gnome-software', 'snapd', 'gnome-software-plugin-snap',
         'bash-completion', 'gnome-boxes', 'telegram-desktop', 'python3-pip'
     ]
@@ -44,7 +44,7 @@ def main():
     sy(f"apm install --packages-file {local}/atom.pacotes")
 
     # minhas ferramentas do python
-    sy('pip3 install -y pipenv')
+    sy('pip3 install pipenv')
     # radon isort coverage pep257 pycodestyle
 
     # linkando coisas
@@ -61,7 +61,7 @@ def main():
 
     print('escolha sua(s) interface/configurações')
     lista = dict(enumerate(interfaces, 1))
-    for numero, interace in lista.items():
+    for numero, interface in lista.items():
         print(f"{numero}: {interface}")
     escolha = int(input('>>> '))
     while escolha not in lista:
