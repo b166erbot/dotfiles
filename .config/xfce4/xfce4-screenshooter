@@ -1,7 +1,7 @@
 app=eog
 last_user=
 screenshot_dir=file:/home/none/python scripts/katoolin/preview
-action=1
+action=2
 delay=0
 region=1
 show_mouse=1

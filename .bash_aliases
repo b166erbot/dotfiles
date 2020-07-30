@@ -1,6 +1,6 @@
 # antigo PS1 -> \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$
 
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+PS1='❰${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]❱\$ '
 
 # PATH
 # comandos locais
@@ -15,7 +15,6 @@ export PATH=$PATH:/usr/bin/snap
 export PYTHONSTARTUP=/home/none/.pythonrc
 
 # ALIASES
-alias config='/usr/bin/git --git-dir=/home/none/.cfg/ --work-tree=/home/none' # git dotfiles
+alias config='git --git-dir=/home/none/.cfg/ --work-tree=/home/none' # git dotfiles
 
-echo fuck society
-echo
+python3 bem_vindo.py fuck society
