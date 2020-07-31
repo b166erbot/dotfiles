@@ -3,181 +3,174 @@
 <channel name="xfce4-panel" version="1.0">
   <property name="configver" type="int" value="2"/>
   <property name="panels" type="array">
+    <value type="int" value="0"/>
     <value type="int" value="1"/>
-    <value type="int" value="2"/>
-    <property name="panel-1" type="empty">
-      <property name="position" type="string" value="p=8;x=800;y=886"/>
+    <property name="panel-0" type="empty">
+      <property name="autohide-behavior" type="uint" value="0"/>
+      <property name="background-alpha" type="uint" value="80"/>
+      <property name="background-style" type="uint" value="0"/>
+      <property name="disable-struts" type="bool" value="false"/>
+      <property name="enter-opacity" type="uint" value="100"/>
+      <property name="leave-opacity" type="uint" value="100"/>
       <property name="length" type="uint" value="100"/>
-      <property name="position-locked" type="bool" value="true"/>
-      <property name="icon-size" type="uint" value="16"/>
-      <property name="size" type="uint" value="26"/>
+      <property name="length-adjust" type="bool" value="true"/>
+      <property name="mode" type="uint" value="0"/>
+      <property name="nrows" type="uint" value="1"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="9"/>
+        <value type="int" value="1"/>
         <value type="int" value="2"/>
         <value type="int" value="3"/>
         <value type="int" value="4"/>
         <value type="int" value="5"/>
-        <value type="int" value="7"/>
         <value type="int" value="6"/>
+        <value type="int" value="7"/>
         <value type="int" value="10"/>
         <value type="int" value="11"/>
-        <value type="int" value="12"/>
-        <value type="int" value="28"/>
-        <value type="int" value="14"/>
-        <value type="int" value="13"/>
-        <value type="int" value="8"/>
+        <value type="int" value="9"/>
       </property>
-      <property name="mode" type="uint" value="0"/>
-      <property name="length-adjust" type="bool" value="true"/>
-      <property name="nrows" type="uint" value="1"/>
-      <property name="background-style" type="uint" value="0"/>
-    </property>
-    <property name="panel-2" type="empty">
-      <property name="autohide-behavior" type="uint" value="2"/>
-      <property name="position" type="string" value="p=9;x=806;y=25"/>
+      <property name="position" type="string" value="p=8;x=800;y=887"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="size" type="uint" value="48"/>
+      <property name="size" type="uint" value="24"/>
+      <property name="span-monitors" type="bool" value="false"/>
+    </property>
+    <property name="panel-1" type="empty">
+      <property name="position" type="string" value="p=9;x=797;y=24"/>
+      <property name="size" type="uint" value="45"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="autohide-behavior" type="uint" value="2"/>
+      <property name="nrows" type="uint" value="1"/>
+      <property name="length" type="uint" value="9"/>
+      <property name="enter-opacity" type="uint" value="100"/>
+      <property name="leave-opacity" type="uint" value="100"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="15"/>
         <value type="int" value="16"/>
-        <value type="int" value="23"/>
-        <value type="int" value="19"/>
-        <value type="int" value="26"/>
-        <value type="int" value="29"/>
-        <value type="int" value="20"/>
-        <value type="int" value="18"/>
-        <value type="int" value="30"/>
-        <value type="int" value="27"/>
+        <value type="int" value="12"/>
+        <value type="int" value="8"/>
+        <value type="int" value="13"/>
+        <value type="int" value="14"/>
+        <value type="int" value="15"/>
         <value type="int" value="17"/>
-        <value type="int" value="1"/>
-        <value type="int" value="24"/>
-        <value type="int" value="21"/>
-        <value type="int" value="22"/>
       </property>
     </property>
   </property>
   <property name="plugins" type="empty">
+    <property name="plugin-1" type="string" value="whiskermenu">
+      <property name="button-icon" type="string" value="xfce4-panel-menu"/>
+      <property name="button-title" type="string" value="Applications"/>
+      <property name="custom-menu" type="bool" value="false"/>
+      <property name="show-button-title" type="bool" value="true"/>
+      <property name="show-generic-names" type="bool" value="false"/>
+      <property name="show-menu-icons" type="bool" value="true"/>
+      <property name="show-tooltips" type="bool" value="false"/>
+    </property>
+    <property name="plugin-10" type="string" value="separator">
+      <property name="expand" type="bool" value="false"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-11" type="string" value="clock">
+      <property name="digital-format" type="string" value="%d %b, %H:%M"/>
+      <property name="mode" type="uint" value="2"/>
+      <property name="show-frame" type="bool" value="true"/>
+      <property name="size-max" type="uint" value="22"/>
+      <property name="style" type="uint" value="0"/>
+      <property name="tooltip-format" type="string" value="%A %d %B %Y"/>
+    </property>
     <property name="plugin-2" type="string" value="tasklist">
-      <property name="grouping" type="uint" value="1"/>
+      <property name="flat-buttons" type="bool" value="true"/>
+      <property name="grouping" type="uint" value="0"/>
+      <property name="include-all-monitors" type="bool" value="true"/>
+      <property name="include-all-workspaces" type="bool" value="false"/>
+      <property name="middle-click" type="uint" value="0"/>
+      <property name="show-button-type" type="int" value="1"/>
+      <property name="show-handle" type="bool" value="true"/>
+      <property name="show-labels" type="bool" value="true"/>
+      <property name="show-only-minimized" type="bool" value="false"/>
+      <property name="show-wireframes" type="bool" value="false"/>
+      <property name="sort-order" type="uint" value="1"/>
+      <property name="switch-workspace-on-unminimize" type="bool" value="true"/>
+      <property name="window-scrolling" type="bool" value="true"/>
     </property>
     <property name="plugin-3" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-4" type="string" value="pager"/>
-    <property name="plugin-5" type="string" value="separator">
-      <property name="style" type="uint" value="2"/>
-    </property>
-    <property name="plugin-6" type="string" value="systray">
+    <property name="plugin-4" type="string" value="systray">
       <property name="show-frame" type="bool" value="false"/>
-      <property name="square-icons" type="bool" value="true"/>
+      <property name="size-max" type="uint" value="22"/>
       <property name="names-ordered" type="array">
-        <value type="string" value="gerenciador de tarefas"/>
-        <value type="string" value="skypeforlinux"/>
-        <value type="string" value="simplescreenrecorder"/>
-        <value type="string" value="vlc"/>
-        <value type="string" value="blueman-tray"/>
-        <value type="string" value="system-config-printer"/>
-        <value type="string" value="telegramdesktop"/>
         <value type="string" value="thunar"/>
-        <value type="string" value="update-notifier"/>
-        <value type="string" value="rede"/>
         <value type="string" value="clipman"/>
-        <value type="string" value="miniaplicativo gerenciador de redes"/>
+        <value type="string" value="rede"/>
       </property>
     </property>
-    <property name="plugin-8" type="string" value="pulseaudio">
+    <property name="plugin-5" type="string" value="notification-plugin"/>
+    <property name="plugin-6" type="string" value="indicator">
+      <property name="align-left" type="bool" value="false"/>
+      <property name="mode-whitelist" type="bool" value="false"/>
+      <property name="single-row" type="bool" value="false"/>
+      <property name="style" type="uint" value="0"/>
+      <property name="known-indicators" type="array">
+        <value type="string" value="com.canonical.indicator.messages"/>
+      </property>
+    </property>
+    <property name="plugin-7" type="string" value="statusnotifier">
+      <property name="icon-size" type="uint" value="22"/>
+      <property name="menu-is-primary" type="bool" value="true"/>
+      <property name="mode-whitelist" type="bool" value="false"/>
+      <property name="single-row" type="bool" value="false"/>
+      <property name="square-icons" type="bool" value="false"/>
+      <property name="symbolic-icons" type="bool" value="true"/>
+      <property name="known-items" type="array">
+        <value type="string" value="TelegramDesktop"/>
+        <value type="string" value="nm-applet"/>
+      </property>
+    </property>
+    <property name="plugin-9" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="enable-mpris" type="bool" value="true"/>
+      <property name="enable-wnck" type="bool" value="true"/>
+      <property name="mixer-command" type="string" value="pavucontrol"/>
+      <property name="mpris-players" type="string" value="parole;"/>
       <property name="show-notifications" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="vlc"/>
     </property>
-    <property name="plugin-10" type="string" value="notification-plugin"/>
-    <property name="plugin-11" type="string" value="separator">
-      <property name="style" type="uint" value="2"/>
-      <property name="expand" type="bool" value="false"/>
-    </property>
-    <property name="plugin-12" type="string" value="clock">
-      <property name="mode" type="uint" value="2"/>
-    </property>
-    <property name="plugin-13" type="string" value="separator">
-      <property name="style" type="uint" value="2"/>
-    </property>
-    <property name="plugin-14" type="string" value="actions"/>
-    <property name="plugin-15" type="string" value="showdesktop"/>
-    <property name="plugin-16" type="string" value="separator"/>
-    <property name="plugin-17" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15938220015.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-18" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15938219214.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-19" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15939575231.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-20" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15938219143.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-21" type="string" value="separator"/>
-    <property name="plugin-22" type="string" value="directorymenu">
-      <property name="base-directory" type="string" value="/home/none"/>
-    </property>
-    <property name="plugin-9" type="string" value="whiskermenu"/>
     <property name="clipman" type="empty">
       <property name="tweaks" type="empty">
         <property name="never-confirm-history-clear" type="bool" value="true"/>
       </property>
     </property>
-    <property name="plugin-23" type="string" value="launcher">
+    <property name="plugin-8" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="15938218941.desktop"/>
+        <value type="string" value="15961520131.desktop"/>
       </property>
     </property>
-    <property name="plugin-24" type="string" value="launcher">
-      <property name="disable-tooltips" type="bool" value="false"/>
+    <property name="plugin-12" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="15938220236.desktop"/>
+        <value type="string" value="15961520383.desktop"/>
       </property>
     </property>
-    <property name="plugin-26" type="string" value="launcher">
+    <property name="plugin-13" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="15938219062.desktop"/>
+        <value type="string" value="15961520644.desktop"/>
       </property>
     </property>
-    <property name="plugin-27" type="string" value="launcher">
+    <property name="plugin-14" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="159382232111.desktop"/>
+        <value type="string" value="15961521415.desktop"/>
       </property>
     </property>
-    <property name="plugin-29" type="string" value="launcher">
+    <property name="plugin-15" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="159382216810.desktop"/>
+        <value type="string" value="15961521526.desktop"/>
       </property>
     </property>
-    <property name="plugin-7" type="string" value="xfce4-notes-plugin"/>
-    <property name="notes" type="empty">
-      <property name="global" type="empty">
-        <property name="background-color" type="string" value="#9696f7f7ce6f"/>
+    <property name="plugin-16" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15961521647.desktop"/>
       </property>
     </property>
-    <property name="plugin-1" type="string" value="launcher">
+    <property name="plugin-17" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="15941558951.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-28" type="string" value="separator">
-      <property name="style" type="uint" value="2"/>
-    </property>
-    <property name="plugin-30" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15950930541.desktop"/>
+        <value type="string" value="15961521788.desktop"/>
       </property>
     </property>
   </property>
