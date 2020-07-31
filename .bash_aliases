@@ -17,4 +17,4 @@ export PYTHONSTARTUP=/home/none/.pythonrc
 # ALIASES
 alias config='git --git-dir=/home/none/.cfg/ --work-tree=/home/none' # git dotfiles
 
-python3 bem_vindo.py fuck society
+python3 ~/bem_vindo.py fuck society

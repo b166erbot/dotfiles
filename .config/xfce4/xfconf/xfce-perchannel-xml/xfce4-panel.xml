@@ -44,12 +44,12 @@
       <property name="leave-opacity" type="uint" value="100"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="16"/>
-        <value type="int" value="12"/>
+        <value type="int" value="17"/>
         <value type="int" value="8"/>
         <value type="int" value="13"/>
         <value type="int" value="14"/>
         <value type="int" value="15"/>
-        <value type="int" value="17"/>
+        <value type="int" value="12"/>
       </property>
     </property>
   </property>
@@ -98,6 +98,7 @@
       <property name="show-frame" type="bool" value="false"/>
       <property name="size-max" type="uint" value="22"/>
       <property name="names-ordered" type="array">
+        <value type="string" value="gerenciador de tarefas"/>
         <value type="string" value="thunar"/>
         <value type="string" value="clipman"/>
         <value type="string" value="rede"/>
