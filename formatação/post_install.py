@@ -33,11 +33,12 @@ def main():
         'bpython', 'net-tools', 'simplescreenrecorder', 'papirus-icon-theme',
         'zeal', 'usb-creator-gtk', 'arc-theme', 'gnome-disk-utility',
         'gnome-software', 'snapd', 'gnome-software-plugin-snap',
-        'bash-completion', 'gnome-boxes', 'telegram-desktop', 'python3-pip'
+        'bash-completion', 'gnome-boxes', 'telegram-desktop', 'python3-pip',
+        'libreoffice'
     ]
     sy('apt install -y ' + ' '.join(programas))
     # woeusb (pendrive bootavel para windows no linux EXCENCIAL)
-    # etcher (pendrive bootavel para qualquer coisa)
+    # ventoy (pendrive bootabel para qualquer coisa)
 
     # instalando extensões para o atom
     # obs: esta extensão fui eu coloquei
@@ -73,6 +74,7 @@ def main():
     # meus scripts
     # sy(f"python3 {local}/../scripts/setup.py install")
     print(f"python3 {local}/../scripts/setup.py install")
+    print('colocar "mensagens" para rodar na inicialização.')
 
 
 if __name__ == '__main__':
