@@ -53,6 +53,7 @@
         <value type="int" value="13"/>
         <value type="int" value="14"/>
         <value type="int" value="15"/>
+        <value type="int" value="22"/>
         <value type="int" value="12"/>
       </property>
     </property>
@@ -102,6 +103,8 @@
       <property name="show-frame" type="bool" value="false"/>
       <property name="size-max" type="uint" value="22"/>
       <property name="names-ordered" type="array">
+        <value type="string" value="itch"/>
+        <value type="string" value="miniaplicativo gerenciador de redes"/>
         <value type="string" value="gerenciador de tarefas"/>
         <value type="string" value="thunar"/>
         <value type="string" value="clipman"/>
@@ -126,6 +129,7 @@
       <property name="square-icons" type="bool" value="false"/>
       <property name="symbolic-icons" type="bool" value="true"/>
       <property name="known-items" type="array">
+        <value type="string" value="TeamViewer"/>
         <value type="string" value="TelegramDesktop"/>
         <value type="string" value="nm-applet"/>
       </property>
@@ -193,6 +197,11 @@
     <property name="plugin-21" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="15964194451.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-22" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15965761781.desktop"/>
       </property>
     </property>
   </property>

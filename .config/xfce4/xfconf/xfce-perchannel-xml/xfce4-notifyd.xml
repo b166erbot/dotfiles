@@ -10,6 +10,7 @@
       <value type="string" value="aviso de memória cheia"/>
       <value type="string" value="Firefox"/>
       <value type="string" value="io.snapcraft.Store"/>
+      <value type="string" value="itch"/>
       <value type="string" value="nm-applet"/>
       <value type="string" value="org.gnome.Software"/>
       <value type="string" value="System Config Printer Notification"/>
