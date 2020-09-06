@@ -1,5 +1,6 @@
 from time import sleep
 from random import choice
+from os import get_terminal_size
 
 
 def texto_efeito_pausa(texto: str):
@@ -13,7 +14,10 @@ def main():
     textos = [
         'fuck society', 'free your mind', 'hello friend'
     ]
-    texto_efeito_pausa(choice(textos))
+    # texto_efeito_pausa(choice(textos))
+    tamanho = get_terminal_size()[0]
+    texto = choice(textos).center(tamanho)
+    print(texto)
     print()
 
 

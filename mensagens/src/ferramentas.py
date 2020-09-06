@@ -6,8 +6,6 @@ from datetime import datetime, timedelta, date, time  # noqa
 from json import load
 gi.require_version('Notify', '0.7')
 from gi.repository import Notify  # noqa
-from os.path import exists
-from os import remove
 
 
 class Notificacao:
@@ -72,12 +70,6 @@ class ProcessosParalelos:
 
 
 def main():
-    if exists('/tmp/mensagens.lock'):
-        print('o programa já esta rodando. saindo.')
-        exit()
-    else:
-        with open('/tmp/mensagens.lock', 'w') as arquivo:
-            arquivo.write('lock')
     print('para encerrar o programa, precione ctrl + c\n')
     with open('src/agenda.json') as arquivo:
         afazeres = load(arquivo)
@@ -87,4 +79,3 @@ def main():
     afazeres = dict(sorted(afazeres.items(), key=lambda x: x[1]))
     agenda = AgendarTarefas(afazeres)
     ProcessosParalelos((alerta, agenda)).rodar()
-    remove('/tmp/mensagens.lock')
