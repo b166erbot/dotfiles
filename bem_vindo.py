@@ -12,7 +12,8 @@ def texto_efeito_pausa(texto: str):
 
 def main():
     textos = [
-        'fuck society', 'free your mind', 'hello friend'
+        'fuck society', 'free your mind', 'hello friend',
+        'follow the white habbit'
     ]
     # texto_efeito_pausa(choice(textos))
     tamanho = get_terminal_size()[0]

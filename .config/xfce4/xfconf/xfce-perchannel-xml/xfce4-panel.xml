@@ -103,6 +103,7 @@
       <property name="show-frame" type="bool" value="false"/>
       <property name="size-max" type="uint" value="22"/>
       <property name="names-ordered" type="array">
+        <value type="string" value="deluge"/>
         <value type="string" value="itch"/>
         <value type="string" value="miniaplicativo gerenciador de redes"/>
         <value type="string" value="gerenciador de tarefas"/>
@@ -139,7 +140,7 @@
       <property name="enable-mpris" type="bool" value="true"/>
       <property name="enable-wnck" type="bool" value="true"/>
       <property name="mixer-command" type="string" value="pavucontrol"/>
-      <property name="mpris-players" type="string" value="parole;"/>
+      <property name="mpris-players" type="string" value=";firefox.instance1259;firefox.instance1262;firefox.instance1286;firefox.instance1288;firefox.instance1291;firefox.instance1296;firefox.instance1301;firefox.instance1302;firefox.instance1305;firefox.instance1310;firefox.instance1311;firefox.instance1312;firefox.instance1317;firefox.instance1318;firefox.instance1322;firefox.instance1324;firefox.instance1326;firefox.instance1358;firefox.instance1360;firefox.instance1368;firefox.instance1371;firefox.instance1375;firefox.instance1381;firefox.instance1413;firefox.instance1455;firefox.instance1484;firefox.instance1511;firefox.instance1526;firefox.instance16836;firefox.instance1692;firefox.instance17728;firefox.instance19834;firefox.instance2003;firefox.instance2088;firefox.instance2148;firefox.instance23100;firefox.instance23792;firefox.instance2665;firefox.instance3358;firefox.instance3622;firefox.instance3694;firefox.instance4028;firefox.instance4441;firefox.instance4511;firefox.instance4789;firefox.instance4964;firefox.instance5646;firefox.instance5648;firefox.instance5944;firefox.instance6065;firefox.instance6449;firefox.instance6550;firefox.instance6923;firefox.instance7060;parole"/>
       <property name="show-notifications" type="bool" value="true"/>
     </property>
     <property name="clipman" type="empty">
