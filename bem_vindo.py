@@ -3,22 +3,24 @@ from random import choice
 from os import get_terminal_size
 
 
-def texto_efeito_pausa(texto: str):
-    for letra in texto:
-        print(letra, end='', flush=True)
-        sleep(0.07)
-    print()
+# def texto_efeito_pausa(texto: str):
+#     for letra in texto:
+#         print(letra, end='', flush=True)
+#         sleep(0.07)
+#     print()
 
 
 def main():
     textos = [
-        'fuck society', 'free your mind', 'hello friend',
-        'follow the white habbit'
+        'fuck society', 'free your mind', 'hello friend'
     ]
     # texto_efeito_pausa(choice(textos))
-    tamanho = get_terminal_size()[0]
-    texto = choice(textos).center(tamanho)
-    print(texto)
+    tamanho_tela = get_terminal_size()[0]
+    texto = f"| {choice(textos)} |"
+    barra = '-' * len(texto)
+    print(barra.center(tamanho_tela))
+    print(texto.center(tamanho_tela))
+    print(barra.center(tamanho_tela))
     print()
 
 

@@ -11,12 +11,12 @@
     <property name="font" type="string" value="Sans Bold 20"/>
   </property>
   <property name="folders" type="empty">
-    <property name="last-used-media" type="string" value="/home/none/Downloads"/>
+    <property name="last-used-media" type="string" value="/home/none/Downloads/torrents/Mad.Max.Estrada.da.Furia.2015.720p.BluRay.Dual-WOLVERDONFILMES.COM"/>
   </property>
   <property name="window" type="empty">
     <property name="maximized" type="bool" value="false"/>
-    <property name="width" type="int" value="536"/>
-    <property name="height" type="int" value="289"/>
+    <property name="width" type="int" value="563"/>
+    <property name="height" type="int" value="334"/>
   </property>
   <property name="audio" type="empty">
     <property name="volume" type="int" value="100"/>
