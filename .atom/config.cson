@@ -18,5 +18,7 @@
   "exception-reporting":
     userId: "68af9256-f3c9-4f39-ad4f-c01c28729562"
   "spell-check": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
