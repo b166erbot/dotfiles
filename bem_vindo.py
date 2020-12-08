@@ -5,6 +5,10 @@ from random import choice
 from os import get_terminal_size
 
 
+def cortar(texto, numero):
+    return [texto[x: x+numero] for x in range(0, len(texto), numero)]
+
+
 # def texto_efeito_pausa(texto: str):
 #     for letra in texto:
 #         print(letra, end='', flush=True)
@@ -15,15 +19,20 @@ from os import get_terminal_size
 def main():
     textos = [
         'fuck society', 'free your mind', 'hello friend', 'bazinga!',
-        'may the force be with you', 'follow the white habbit'
+        'may the force be with you', 'follow the white habbit',
+        'One Ring to rule them all, One Ring to find them, One Ring '
+        'to bring them all, And in the darkness bind them'
     ]
     # texto_efeito_pausa(choice(textos))
+    texto = choice(textos)
     tamanho_tela = get_terminal_size()[0]
-    texto = f"| {choice(textos)} |"
-    barra = '-' * len(texto)
-    print(barra.center(tamanho_tela))
-    print(texto.center(tamanho_tela))
-    print(barra.center(tamanho_tela))
+    texto_cortado = cortar(texto, tamanho_tela - 4)
+    for texto in texto_cortado:
+        texto = f"| {texto} |"
+        barra = '-' * len(texto)
+        print(barra.center(tamanho_tela))
+        print(texto.center(tamanho_tela))
+        print(barra.center(tamanho_tela))
     print()
 
 
