@@ -11,15 +11,15 @@
     <property name="font" type="string" value="Sans Bold 20"/>
   </property>
   <property name="folders" type="empty">
-    <property name="last-used-media" type="string" value="/home/none/Downloads"/>
+    <property name="last-used-media" type="string" value="/home/none/Música/sertanejo universitário/jorge e mateus"/>
   </property>
   <property name="window" type="empty">
     <property name="maximized" type="bool" value="false"/>
-    <property name="width" type="int" value="563"/>
+    <property name="width" type="int" value="475"/>
     <property name="height" type="int" value="322"/>
   </property>
   <property name="audio" type="empty">
-    <property name="volume" type="int" value="100"/>
+    <property name="volume" type="int" value="99"/>
   </property>
   <property name="playlist" type="empty">
     <property name="show-playlist" type="bool" value="false"/>

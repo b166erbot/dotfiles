@@ -9,6 +9,20 @@ def cortar(texto, numero):
     return [texto[x: x+numero] for x in range(0, len(texto), numero)]
 
 
+def cortar2(texto, numero):
+    texto2 = texto.split()
+    temp = []
+    texto_cortado = []
+    while bool(texto2):
+        while len(' '.join(temp)) < numero and bool(texto2):
+            temp.append(texto2.pop(0))
+        if len(' '.join(temp)) > numero:
+            texto2.insert(0, temp.pop())
+        texto_cortado.append(' '.join(temp))
+        temp = []
+    return texto_cortado
+
+
 # def texto_efeito_pausa(texto: str):
 #     for letra in texto:
 #         print(letra, end='', flush=True)
@@ -26,7 +40,7 @@ def main():
     # texto_efeito_pausa(choice(textos))
     texto = choice(textos)
     tamanho_tela = get_terminal_size()[0]
-    texto_cortado = cortar(texto, tamanho_tela - 4)
+    texto_cortado = cortar2(texto, tamanho_tela - 4)
     for texto in texto_cortado:
         texto = f"| {texto} |"
         barra = '-' * len(texto)
