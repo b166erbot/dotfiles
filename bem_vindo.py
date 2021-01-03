@@ -5,8 +5,8 @@ from random import choice
 from os import get_terminal_size
 
 
-def cortar(texto, numero):
-    return [texto[x: x+numero] for x in range(0, len(texto), numero)]
+# def cortar(texto, numero):
+#     return [texto[x: x+numero] for x in range(0, len(texto), numero)]
 
 
 def cortar2(texto, numero):
