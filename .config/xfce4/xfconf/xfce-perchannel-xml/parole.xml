@@ -5,21 +5,21 @@
     <property name="videosink" type="empty"/>
   </property>
   <property name="parole" type="empty">
-    <property name="plugins" type="empty"/>
+    <property name="plugins" type="string" value=""/>
   </property>
   <property name="subtitles" type="empty">
     <property name="font" type="string" value="Sans Bold 20"/>
   </property>
   <property name="folders" type="empty">
-    <property name="last-used-media" type="string" value="/home/none/Downloads"/>
+    <property name="last-used-media" type="string" value="/home/none/Downloads/VideoDownloader"/>
   </property>
   <property name="window" type="empty">
     <property name="maximized" type="bool" value="false"/>
     <property name="width" type="int" value="536"/>
-    <property name="height" type="int" value="322"/>
+    <property name="height" type="int" value="286"/>
   </property>
   <property name="audio" type="empty">
-    <property name="volume" type="int" value="83"/>
+    <property name="volume" type="int" value="75"/>
   </property>
   <property name="playlist" type="empty">
     <property name="show-playlist" type="bool" value="false"/>

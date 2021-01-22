@@ -35,7 +35,8 @@ def main():
         'fuck society', 'free your mind', 'hello friend', 'bazinga!',
         'may the force be with you', 'follow the white habbit',
         'One Ring to rule them all, One Ring to find them, One Ring '
-        'to bring them all, And in the darkness bind them'
+        'to bring them all, And in the darkness bind them',
+        'I solemnly swear that I am up to no good'
     ]
     # texto_efeito_pausa(choice(textos))
     texto = choice(textos)
