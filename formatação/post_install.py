@@ -35,14 +35,14 @@ def main():
         'gnome-software', 'snapd', 'gnome-software-plugin-snap',
         'bash-completion', 'gnome-boxes', 'telegram-desktop', 'python3-pip',
         'libreoffice'
-    ]
+    ] # poppler-utils -> pdf
     sy('apt install -y ' + ' '.join(programas))
     # woeusb (pendrive bootavel para windows no linux EXCENCIAL)
     # ventoy (pendrive bootabel para qualquer coisa)
 
     # instalando extensões para o atom
     # obs: esta extensão fui eu coloquei
-    sy(f"apm install --packages-file {local}/atom.pacotes")
+    # sy(f"apm install --packages-file {local}/atom.pacotes")
 
     # minhas ferramentas do python
     sy('pip3 install pipenv')
@@ -60,20 +60,20 @@ def main():
     # limpando o sistema caso seja necessário
     sy('apt autoremove -y')
 
-    print('escolha sua(s) interface/configurações')
-    lista = dict(enumerate(interfaces, 1))
-    for numero, interface in lista.items():
-        print(f"{numero}: {interface}")
-    escolha = int(input('>>> '))
-    while escolha not in lista:
-        print('coloque um número que esteja na lista')
-        escolha = int(input('>>> '))
-    comando = interfaces[lista[escolha]]
-    sy(comando)
+    # print('escolha sua(s) interface/configurações')
+    # lista = dict(enumerate(interfaces, 1))
+    # for numero, interface in lista.items():
+    #     print(f"{numero}: {interface}")
+    # escolha = int(input('>>> '))
+    # while escolha not in lista:
+    #     print('coloque um número que esteja na lista')
+    #     escolha = int(input('>>> '))
+    # comando = interfaces[lista[escolha]]
+    # sy(comando)
 
     # meus scripts
     # sy(f"python3 {local}/../scripts/setup.py install")
-    print(f"python3 {local}/../scripts/setup.py install")
+    # print(f"python3 {local}/../scripts/setup.py install")
     print('colocar "mensagens" para rodar na inicialização.')
 
 

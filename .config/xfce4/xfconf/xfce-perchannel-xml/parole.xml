@@ -19,7 +19,7 @@
     <property name="height" type="int" value="286"/>
   </property>
   <property name="audio" type="empty">
-    <property name="volume" type="int" value="75"/>
+    <property name="volume" type="int" value="100"/>
   </property>
   <property name="playlist" type="empty">
     <property name="show-playlist" type="bool" value="false"/>
