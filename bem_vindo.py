@@ -33,9 +33,8 @@ def cortar2(texto, numero):
 
 def main():
     cores = [
-        'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'dark_gray',
-        'light_red', 'light_green', 'light_yellow', 'light_blue', 'light_magenta',
-        'light_cyan'
+        'red', 'green', 'yellow', 'blue', 'cyan', 'dark_gray',
+        'light_red', 'light_green', 'light_yellow', 'light_blue', 'light_cyan'
     ]
     textos = [
         'fuck society', 'free your mind', 'hello friend', 'bazinga!',
