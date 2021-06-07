@@ -3,7 +3,7 @@
 from time import sleep
 from random import choice
 from os import get_terminal_size
-from colored import fg, bg, attr
+from colored import fg, attr
 
 
 # def cortar(texto, numero):
@@ -33,8 +33,8 @@ def cortar2(texto, numero):
 
 def main():
     cores = [
-        'red', 'green', 'yellow', 'blue', 'cyan', 'dark_gray',
-        'light_red', 'light_green', 'light_yellow', 'light_blue', 'light_cyan'
+        'red', 'green', 'yellow', 'cyan', 'light_red', 'light_green',
+        'light_yellow', 'light_blue', 'light_cyan'
     ]
     textos = [
         'fuck society', 'free your mind', 'hello friend', 'bazinga!',
@@ -50,7 +50,7 @@ def main():
     tamanho_tela = get_terminal_size()[0]
     texto_cortado = cortar2(texto, tamanho_tela - 4)
     cor = choice(cores)
-    print(fg(cor) + bg('black'))
+    print(fg(cor))
     for texto in texto_cortado:
         texto = f"| {texto} |"
         barra = '-' * len(texto)
