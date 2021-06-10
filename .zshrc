@@ -9,7 +9,8 @@ export ZSH="/home/none/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="arrow"
+# temas que eu gostei: bira, arrow
+ZSH_THEME="af-magic"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -104,3 +105,6 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 alias config='git --git-dir=/home/none/.cfg/ --work-tree=/home/none' # git dotfiles
 alias portas_abertas='netstat -atunp'
+
+python3 bem_vindo.py
+

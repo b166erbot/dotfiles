@@ -34,7 +34,7 @@ def main():
         'zeal', 'usb-creator-gtk', 'arc-theme', 'gnome-disk-utility',
         'gnome-software', 'snapd', 'gnome-software-plugin-snap',
         'bash-completion', 'gnome-boxes', 'telegram-desktop', 'python3-pip',
-        'libreoffice'
+        'libreoffice', 'zsh'
     ] # poppler-utils -> pdf
     sy('apt install -y ' + ' '.join(programas))
     # woeusb (pendrive bootavel para windows no linux EXCENCIAL)
@@ -48,6 +48,10 @@ def main():
     sy('pip3 install pipenv')
     # radon isort coverage pep257 pycodestyle
 
+    # configurando zsh
+    sy('sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell'
+       '/oh-my-zsh/master/tools/install.sh)"')
+    sy('chsh -s $(which zsh)')
     # linkando coisas
     sy('ln -s /usr/bin/bpython3 /usr/bin/bpython')
 
@@ -75,6 +79,7 @@ def main():
     # sy(f"python3 {local}/../scripts/setup.py install")
     # print(f"python3 {local}/../scripts/setup.py install")
     print('colocar "mensagens" para rodar na inicialização.')
+    print('importar as configurações dos arquivos dot')
 
 
 if __name__ == '__main__':
