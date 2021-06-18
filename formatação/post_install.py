@@ -11,7 +11,7 @@ def root() -> bool:
 
 
 def verificar_root() -> None:
-    if not root():
+    if not root(): # é necessário o `which python` pois instala o pipenv
         print(
             'execute este script como root:'
             ' sudo `which python3` post_install.py'
@@ -34,7 +34,7 @@ def main():
         'zeal', 'usb-creator-gtk', 'arc-theme', 'gnome-disk-utility',
         'gnome-software', 'snapd', 'gnome-software-plugin-snap',
         'bash-completion', 'gnome-boxes', 'telegram-desktop', 'python3-pip',
-        'libreoffice', 'zsh'
+        'libreoffice', 'zsh', 'curl'
     ] # poppler-utils -> pdf
     sy('apt install -y ' + ' '.join(programas))
     # woeusb (pendrive bootavel para windows no linux EXCENCIAL)
@@ -52,6 +52,8 @@ def main():
     sy('sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell'
        '/oh-my-zsh/master/tools/install.sh)"')
     sy('chsh -s $(which zsh)')
+    sy('cd /home/none && git clone https://github.com/zsh-users/'
+       'zsh-syntax-highlighting.git')
     # linkando coisas
     sy('ln -s /usr/bin/bpython3 /usr/bin/bpython')
 

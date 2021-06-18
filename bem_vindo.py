@@ -43,7 +43,7 @@ def main():
         'to bring them all, And in the darkness bind them',
         'I solemnly swear that I am up to no good',
         'the gravity can cross the dimensions, including time',
-        'stay'
+        'stay', 'YOU SHALL NOT PASS'
     ]
     # texto_efeito_pausa(choice(textos))
     texto = choice(textos)

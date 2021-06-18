@@ -75,6 +75,7 @@ ZSH_THEME="af-magic"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source /home/none/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
