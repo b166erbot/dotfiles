@@ -76,6 +76,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 source /home/none/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source meu_token.sh
 
 # User configuration
 
