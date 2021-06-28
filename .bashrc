@@ -107,4 +107,3 @@ fi
 # export SDKMAN_DIR="/home/none/.sdkman"
 # [[ -s "/home/none/.sdkman/bin/sdkman-init.sh" ]] && source "/home/none/.sdkman/bin/sdkman-init.sh"
 
-source meu_token.sh

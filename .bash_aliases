@@ -19,3 +19,4 @@ alias config='git --git-dir=/home/none/.cfg/ --work-tree=/home/none' # git dotfi
 alias portas_abertas='netstat -atunp'
 
 python3 ~/bem_vindo.py
+source ~/meu_token.sh

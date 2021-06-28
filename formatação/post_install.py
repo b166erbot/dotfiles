@@ -82,6 +82,7 @@ def main():
     # print(f"python3 {local}/../scripts/setup.py install")
     print('colocar "mensagens" para rodar na inicialização.')
     print('importar as configurações dos arquivos dot')
+    print('criar um arquivo chamado meu_token.sh e colocar o token do pendrive nele.')
 
 
 if __name__ == '__main__':

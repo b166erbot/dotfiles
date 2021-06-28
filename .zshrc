@@ -75,8 +75,8 @@ ZSH_THEME="af-magic"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source /home/none/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source meu_token.sh
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/meu_token.sh
 
 # User configuration
 
@@ -108,5 +108,5 @@ source meu_token.sh
 alias config='git --git-dir=/home/none/.cfg/ --work-tree=/home/none' # git dotfiles
 alias portas_abertas='netstat -atunp'
 
-python3 bem_vindo.py
+python3 ~/bem_vindo.py
 
