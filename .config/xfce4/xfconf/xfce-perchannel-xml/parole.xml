@@ -11,11 +11,11 @@
     <property name="font" type="string" value="Sans Bold 20"/>
   </property>
   <property name="folders" type="empty">
-    <property name="last-used-media" type="string" value="/home/none/Downloads/VideoDownloader"/>
+    <property name="last-used-media" type="string" value="/home/none/Música/eletronicas/dubstep"/>
   </property>
   <property name="window" type="empty">
     <property name="maximized" type="bool" value="false"/>
-    <property name="width" type="int" value="536"/>
+    <property name="width" type="int" value="475"/>
     <property name="height" type="int" value="286"/>
   </property>
   <property name="audio" type="empty">
@@ -23,7 +23,7 @@
   </property>
   <property name="playlist" type="empty">
     <property name="show-playlist" type="bool" value="false"/>
-    <property name="shuffle" type="bool" value="true"/>
-    <property name="repeat" type="bool" value="true"/>
+    <property name="shuffle" type="bool" value="false"/>
+    <property name="repeat" type="bool" value="false"/>
   </property>
 </channel>

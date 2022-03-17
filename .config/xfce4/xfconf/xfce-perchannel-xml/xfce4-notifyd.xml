@@ -29,4 +29,7 @@
     </property>
   </property>
   <property name="do-not-disturb" type="bool" value="false"/>
+  <property name="primary-monitor" type="uint" value="0"/>
+  <property name="log-level" type="uint" value="0"/>
+  <property name="log-level-apps" type="uint" value="0"/>
 </channel>

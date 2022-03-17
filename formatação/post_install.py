@@ -32,17 +32,20 @@ def main():
         'python3-dev', 'glade', 'gimp', 'pycodestyle', 'git', 'poppler-utils',
         'bpython', 'net-tools', 'simplescreenrecorder', 'papirus-icon-theme',
         'zeal', 'usb-creator-gtk', 'arc-theme', 'gnome-disk-utility',
-        'gnome-software', 'snapd', 'gnome-software-plugin-snap',
-        'bash-completion', 'gnome-boxes', 'telegram-desktop', 'python3-pip',
-        'libreoffice', 'zsh', 'curl'
+        'snapd', 'gnome-software-plugin-snap',
+        'bash-completion', 'gnome-boxes', 'python3-pip', 'libreoffice',
+        'zsh', 'curl'
     ] # poppler-utils -> pdf
+    # gnome-software, loja de programas
+    # o curl é preciso baixar pois ele será executado ali em baixo
     sy('apt install -y ' + ' '.join(programas))
+    sy('snap install atom video-downloader')
     # woeusb (pendrive bootavel para windows no linux EXCENCIAL)
     # ventoy (pendrive bootabel para qualquer coisa)
 
     # instalando extensões para o atom
     # obs: esta extensão fui eu coloquei
-    # sy(f"apm install --packages-file {local}/atom.pacotes")
+    sy(f"apm install --packages-file {local}/atom.pacotes")
 
     # minhas ferramentas do python
     sy('pip3 install pipenv')
@@ -61,7 +64,7 @@ def main():
     sy('apt full-upgrade -y')
 
     # removendo programas e dependências desnecessárias
-    sy('apt remove -y vim')
+    sy('apt autoremove -y vim gnome-keyring')
 
     # limpando o sistema caso seja necessário
     sy('apt autoremove -y')
@@ -82,7 +85,15 @@ def main():
     # print(f"python3 {local}/../scripts/setup.py install")
     print('colocar "mensagens" para rodar na inicialização.')
     print('importar as configurações dos arquivos dot')
-    print('criar um arquivo chamado meu_token.sh e colocar o token do pendrive nele.')
+    print(
+        'criar um arquivo chamado meu_token.sh '
+        'e colocar o token do pendrive nele.'
+    )
+    print('baixar o executável do telegram pelo site')
+    print((
+        'instalar os drivers da impressora. pesquisa no ddg o nome da impress'
+        'ora'
+    ))
 
 
 if __name__ == '__main__':

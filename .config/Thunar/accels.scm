@@ -24,6 +24,7 @@
 ; (gtk_accel_path "<Actions>/ThunarStandardView/properties" "<Alt>Return")
 ; (gtk_accel_path "<Actions>/ThunarLauncher/open-in-new-window" "<Primary><Shift>o")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/back" "<Alt>Left")
+; (gtk_accel_path "<Actions>/ThunarBookmarks/966ec5f90a9cdd7095a6f88f82f6f2a3" "")
 ; (gtk_accel_path "<Actions>/ThunarActions/uca-action-1591319197271121-1" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/sendto-menu" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/delete" "")
