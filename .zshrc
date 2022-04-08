@@ -104,6 +104,9 @@ source ~/meu_token.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# path
+export PATH=$PATH:/home/none/.local/bin
+
 # Aliases
 alias config='git --git-dir=/home/none/.cfg/ --work-tree=/home/none' # git dotfiles
 alias portas_abertas='netstat -atunp'

@@ -32,31 +32,31 @@ def main():
         'python3-dev', 'glade', 'gimp', 'pycodestyle', 'git', 'poppler-utils',
         'bpython', 'net-tools', 'simplescreenrecorder', 'papirus-icon-theme',
         'zeal', 'usb-creator-gtk', 'arc-theme', 'gnome-disk-utility',
-        'snapd', 'gnome-software-plugin-snap',
+        'snapd', 'gnome-software-plugin-snap', 'transmission-gtk',
         'bash-completion', 'gnome-boxes', 'python3-pip', 'libreoffice',
-        'zsh', 'curl'
+        'zsh', 'curl', 'nano'
     ] # poppler-utils -> pdf
     # gnome-software, loja de programas
     # o curl é preciso baixar pois ele será executado ali em baixo
     sy('apt install -y ' + ' '.join(programas))
-    sy('snap install atom video-downloader')
+    sy('snap install video-downloader')
     # woeusb (pendrive bootavel para windows no linux EXCENCIAL)
     # ventoy (pendrive bootabel para qualquer coisa)
 
     # instalando extensões para o atom
     # obs: esta extensão fui eu coloquei
-    sy(f"apm install --packages-file {local}/atom.pacotes")
+    # sy(f"apm install --packages-file {local}/atom.pacotes")
 
     # minhas ferramentas do python
-    sy('pip3 install pipenv')
+    # sy('pip3 install pipenv')
     # radon isort coverage pep257 pycodestyle
 
     # configurando zsh
     sy('sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell'
        '/oh-my-zsh/master/tools/install.sh)"')
     sy('chsh -s $(which zsh)')
-    sy('cd /home/none && git clone https://github.com/zsh-users/'
-       'zsh-syntax-highlighting.git')
+    # sy('cd /home/none && git clone https://github.com/zsh-users/'
+    #    'zsh-syntax-highlighting.git')
     # linkando coisas
     sy('ln -s /usr/bin/bpython3 /usr/bin/bpython')
 
@@ -64,7 +64,7 @@ def main():
     sy('apt full-upgrade -y')
 
     # removendo programas e dependências desnecessárias
-    sy('apt autoremove -y vim gnome-keyring')
+    sy('apt autoremove -y vim gnome-keyring firefox rhythmbox')
 
     # limpando o sistema caso seja necessário
     sy('apt autoremove -y')
@@ -83,7 +83,6 @@ def main():
     # meus scripts
     # sy(f"python3 {local}/../scripts/setup.py install")
     # print(f"python3 {local}/../scripts/setup.py install")
-    print('colocar "mensagens" para rodar na inicialização.')
     print('importar as configurações dos arquivos dot')
     print(
         'criar um arquivo chamado meu_token.sh '
@@ -94,6 +93,11 @@ def main():
         'instalar os drivers da impressora. pesquisa no ddg o nome da impress'
         'ora'
     ))
+    print('baixar o google chrome.deb, atom.deb')
+    print('instale o oh my zsh')
+    print('instalar o free-ofice e colocar a chave de ativação permanente nele')
+    print('arrumar as barras da interface e salvar a configuração')
+    print('executar manualmente a instalação das estenções do atom')
 
 
 if __name__ == '__main__':
