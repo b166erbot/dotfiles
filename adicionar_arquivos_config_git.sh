@@ -26,3 +26,7 @@ config add ~/.dotfiles_cola
 config add ~/.zshrc
 config add ~/bem_vindo.py
 config add ~/adicionar_arquivos_config_git.sh
+config add ~/.gitconfig
+config add ~/.gitignore
+config add ~/.pdbrc
+config add ~/sites_interessantes.txt

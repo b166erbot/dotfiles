@@ -1,0 +1,3 @@
+draw.io -> diagramas
+registro.br -> pesquisa e registra um domínio
+https://snippet-generator.app -> gerador de snippets para vscode/atom/sublime text
