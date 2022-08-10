@@ -90,3 +90,4 @@ config add ~/formatação/interfaces.py
 config add ~/formatação/post_install.py
 config add ~/formatação/pre_install.py
 config add ~/sites_interessantes.txt
+config add ~/git/dicas\ para\ comandos\ git.txt

@@ -1,0 +1,2 @@
+git rm --cached -> parar de rastrear um arquivo
+git ls-tree -r master --name-only -> mostrar todos os arquivos que estão sendo rastreados
