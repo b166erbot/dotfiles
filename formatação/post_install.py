@@ -64,7 +64,8 @@ def main():
     sy('apt full-upgrade -y')
 
     # removendo programas e dependências desnecessárias
-    sy('apt autoremove -y vim gnome-keyring firefox rhythmbox')
+    sy('apt autoremove -y vim firefox rhythmbox')
+    # remover gnome-keyring se ele começar a dar problemas.
 
     # limpando o sistema caso seja necessário
     sy('apt autoremove -y')
@@ -93,7 +94,7 @@ def main():
         'instalar os drivers da impressora. pesquisa no ddg o nome da impress'
         'ora'
     ))
-    print('baixar o google chrome.deb, atom.deb')
+    print('baixar o google chrome.deb, visual_studio_code.deb')
     print('instale o oh my zsh')
     print('instalar o free-ofice e colocar a chave de ativação permanente nele')
     print('arrumar as barras da interface e salvar a configuração')

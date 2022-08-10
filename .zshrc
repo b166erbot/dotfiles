@@ -105,7 +105,10 @@ source ~/meu_token.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # path
-export PATH=$PATH:/home/none/.local/bin
+export PATH=$PATH:/home/none/.local/bin:/home/none/anaconda3/bin
+
+# sources
+source ~/anaconda3/etc/profile.d/conda.sh
 
 # Aliases
 alias config='git --git-dir=/home/none/.cfg/ --work-tree=/home/none' # git dotfiles
