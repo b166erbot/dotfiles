@@ -1,5 +1,7 @@
 alias config='git --git-dir=/home/none/.cfg/ --work-tree=/home/none' # git dotfiles
 
+config add ~/.config/i3/config
+
 config add ~/.config/Thunar/accels.scm
 config add ~/.config/Thunar/uca.xml
 
