@@ -1,3 +1,5 @@
+# https://www.atlassian.com/git/tutorials/dotfiles
+
 alias config='git --git-dir=/home/none/.cfg/ --work-tree=/home/none' # git dotfiles
 
 config add ~/.bash_aliases
