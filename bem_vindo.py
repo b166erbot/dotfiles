@@ -44,7 +44,8 @@ def main():
         'I solemnly swear that I am up to no good',
         'the gravity can cross the dimensions, including time',
         'stay', 'YOU SHALL NOT PASS',
-        "Nobody exists on purpose. Nobody belongs anywhere. Everybody's gonna die. Come watch TV"
+        'Nobody exists on purpose. Nobody belongs anywhere. Everybody'
+        '\'s gonna die. Come watch TV'
     ]
     # texto_efeito_pausa(choice(textos))
     texto = choice(textos)

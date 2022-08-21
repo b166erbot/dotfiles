@@ -74,10 +74,6 @@ ZSH_THEME="af-magic"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
-source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/meu_token.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -108,6 +104,9 @@ source ~/meu_token.sh
 export PATH=$PATH:/home/none/.local/bin:/home/none/anaconda3/bin
 
 # sources
+source $ZSH/oh-my-zsh.sh
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/meu_token.sh
 source ~/anaconda3/etc/profile.d/conda.sh
 
 # Aliases
