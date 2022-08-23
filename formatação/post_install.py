@@ -34,7 +34,7 @@ def main():
         'zeal', 'usb-creator-gtk', 'arc-theme', 'gnome-disk-utility',
         'snapd', 'gnome-software-plugin-snap', 'transmission-gtk',
         'bash-completion', 'gnome-boxes', 'python3-pip', 'libreoffice',
-        'zsh', 'curl', 'nano'
+        'zsh', 'curl', 'nano', 'i3-wm', 'rofi', 'nitrogen', 'picom'
     ] # poppler-utils -> pdf
     # gnome-software, loja de programas
     # o curl é preciso baixar pois ele será executado ali em baixo
@@ -48,15 +48,16 @@ def main():
     # sy(f"apm install --packages-file {local}/atom.pacotes")
 
     # minhas ferramentas do python
-    # sy('pip3 install pipenv')
+    sy('pip3 install pipenv poetry colored')
     # radon isort coverage pep257 pycodestyle
 
     # configurando zsh
     sy('sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell'
        '/oh-my-zsh/master/tools/install.sh)"')
     sy('chsh -s $(which zsh)')
-    # sy('cd /home/none && git clone https://github.com/zsh-users/'
-    #    'zsh-syntax-highlighting.git')
+    sy('cd /home/none && git clone https://github.com/zsh-users/'
+       'zsh-syntax-highlighting.git')
+    
     # linkando coisas
     sy('ln -s /usr/bin/bpython3 /usr/bin/bpython')
 
@@ -84,6 +85,7 @@ def main():
     # meus scripts
     # sy(f"python3 {local}/../scripts/setup.py install")
     # print(f"python3 {local}/../scripts/setup.py install")
+    print('\n' * 3)
     print('importar as configurações dos arquivos dot')
     print(
         'criar um arquivo chamado meu_token.sh '
@@ -96,8 +98,7 @@ def main():
     ))
     print('baixar o google chrome.deb, visual_studio_code.deb')
     print('instale o oh my zsh')
-    print('instalar o free-ofice e colocar a chave de ativação permanente nele')
-    print('arrumar as barras da interface e salvar a configuração')
+    # print('instalar o free-ofice e colocar a chave de ativação permanente nele')
     print('executar manualmente a instalação das estenções do atom')
 
 

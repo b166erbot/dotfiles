@@ -198,13 +198,23 @@ bindsym Shift+Print exec xfce4-screenshooter -r
 
 # cores
 # class                 border  backgr. text    indicator child_border
-client.focused          #2a1a3f #2a1a3f #ffffff #2a1a3f   #2a1a3f
-client.focused_inactive #0f0f0f #0f0f0f #ffffff #0f0f0f   #0f0f0f
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+#client.focused          #2a1a3f #2a1a3f #ffffff #2a1a3f   #2a1a3f
+#client.focused_inactive #0f0f0f #0f0f0f #ffffff #0f0f0f   #0f0f0f
+#client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+#client.urgent           #2f343a #900000 #ffffff #900000   #900000
+#client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-client.background       #ffffff
+#client.background       #ffffff
+
+# cores com o tema dracula
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+client.background       #F8F8F2
 
 
 # gaps
@@ -223,5 +233,5 @@ exec_always nitrogen --restore
 # exec_always polybar fuckingbar
 exec_always ~/.config/polybar/launch.sh --forest
 
-# executar o notificador  # saporra não roda, porque?
+# executar o notificador
 exec_always ~/notificacao/notificacao.sh
