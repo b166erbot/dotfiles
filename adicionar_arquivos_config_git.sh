@@ -23,11 +23,10 @@ config add ~/.pythonrc
 config add ~/.zshrc
 config add ~/adicionar_arquivos_config_git.sh
 config add ~/bem_vindo.py
-config add ~/formatação/deprecated_sh/post_install.sh
-config add ~/formatação/deprecated_sh/pre_install.sh
-config add ~/formatação/deprecated_sh/xfce4.sh
 config add ~/formatação/interfaces.py
 config add ~/formatação/post_install.py
 config add ~/formatação/pre_install.py
 config add ~/sites_interessantes.txt
 config add ~/git/dicas_para_comandos_git.txt
+config add ~/.config/ncmpcpp/config
+config add ~/.config/mpd/mpd.conf

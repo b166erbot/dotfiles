@@ -184,19 +184,16 @@ bar {
 }
 
 
-# executando o picom
-exec_always picom -f
-
-
 # atalho para screenshot
 # bindsym Print exec xfce4-screenshooter -fc # não funciona.
 bindsym Shift+Print exec xfce4-screenshooter -r
 
-# atalho para o gerenciador de tarefas # não funciona
-# bindsym Ctrl+Shift+Esc exec xfce4-taskmanager
+
+# atalho para o gerenciador de tarefas 
+# bindsym Ctrl+Shift+Esc exec xfce4-taskmanager # não funciona
 
 
-# cores
+# minhas cores
 # class                 border  backgr. text    indicator child_border
 #client.focused          #2a1a3f #2a1a3f #ffffff #2a1a3f   #2a1a3f
 #client.focused_inactive #0f0f0f #0f0f0f #ffffff #0f0f0f   #0f0f0f
@@ -225,12 +222,20 @@ client.background       #F8F8F2
 gaps inner 10
 gaps outer 15
 
+# executando o mpd para o ncmpcpp rodar
+exec_always --no-startup-id mpd
+
+# compositores
+# executando o picom
+# exec_always picom -f
+
+# executando o compton
+exec_always --no-startup-id compton -b
+
 # colocar o wallpaper com o nitrogen
 exec_always nitrogen --restore
 
-
 # executar o polybar
-# exec_always polybar fuckingbar
 exec_always ~/.config/polybar/launch.sh --forest
 
 # executar o notificador

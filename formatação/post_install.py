@@ -34,7 +34,8 @@ def main():
         'zeal', 'usb-creator-gtk', 'arc-theme', 'gnome-disk-utility',
         'snapd', 'gnome-software-plugin-snap', 'transmission-gtk',
         'bash-completion', 'gnome-boxes', 'python3-pip', 'libreoffice',
-        'zsh', 'curl', 'nano', 'i3-wm', 'rofi', 'nitrogen', 'picom'
+        'zsh', 'curl', 'nano', 'i3-wm', 'rofi', 'nitrogen', 'picom', 'mpd',
+        'mpc', 'ncmpcpp'
     ] # poppler-utils -> pdf
     # gnome-software, loja de programas
     # o curl é preciso baixar pois ele será executado ali em baixo
@@ -51,7 +52,7 @@ def main():
     sy('pip3 install pipenv poetry colored')
     # radon isort coverage pep257 pycodestyle
 
-    # configurando zsh
+    # instalando o oh-my-zsh
     sy('sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell'
        '/oh-my-zsh/master/tools/install.sh)"')
     sy('chsh -s $(which zsh)')
