@@ -2,8 +2,7 @@ from os import system as sy
 from os import getuid
 from pathlib import Path
 from os import chdir
-
-from interfaces import interfaces
+from argparse import ArgumentParser
 
 
 def root() -> bool:
@@ -19,7 +18,7 @@ def verificar_root() -> None:
         exit(1)
 
 
-def main():
+def main(argumentos):
     verificar_root()
     local = Path(__file__).parent
     chdir(local)
@@ -34,8 +33,7 @@ def main():
         'zeal', 'usb-creator-gtk', 'arc-theme', 'gnome-disk-utility',
         'snapd', 'gnome-software-plugin-snap', 'transmission-gtk',
         'bash-completion', 'gnome-boxes', 'python3-pip', 'libreoffice',
-        'zsh', 'curl', 'nano', 'i3-wm', 'rofi', 'nitrogen', 'picom', 'mpd',
-        'mpc', 'ncmpcpp', 'vlc'
+        'zsh', 'curl', 'nano', 'vlc'
     ] # poppler-utils -> pdf
     # gnome-software, loja de programas
     # o curl é preciso baixar pois ele será executado ali em baixo
@@ -45,7 +43,6 @@ def main():
     # ventoy (pendrive bootabel para qualquer coisa)
 
     # instalando extensões para o atom
-    # obs: esta extensão fui eu coloquei
     # sy(f"apm install --packages-file {local}/atom.pacotes")
 
     # minhas ferramentas do python
@@ -66,28 +63,28 @@ def main():
     sy('apt full-upgrade -y')
 
     # removendo programas e dependências desnecessárias
-    sy('apt autoremove -y vim firefox rhythmbox')
+    sy('apt autoremove -y vim rhythmbox')
     # remover gnome-keyring se ele começar a dar problemas.
 
     # limpando o sistema caso seja necessário
     sy('apt autoremove -y')
 
-    # print('escolha sua(s) interface/configurações')
-    # lista = dict(enumerate(interfaces, 1))
-    # for numero, interface in lista.items():
-    #     print(f"{numero}: {interface}")
-    # escolha = int(input('>>> '))
-    # while escolha not in lista:
-    #     print('coloque um número que esteja na lista')
-    #     escolha = int(input('>>> '))
-    # comando = interfaces[lista[escolha]]
-    # sy(comando)
+    # instalando a interface de usuário
+    if argumentos.interface == 'i3-wm':
+        programas = [
+            'i3-wm', 'rofi', 'nitrogen', 'picom', 'mpd',
+            'mpc', 'ncmpcpp'
+        ]
+    elif argumentos.interface == 'xfce4':
+        programas = ['xfce4', 'xfce4-goodies']
+    sy('apt install -y ' + ' '.join(programas))
 
     # meus scripts
     # sy(f"python3 {local}/../scripts/setup.py install")
     # print(f"python3 {local}/../scripts/setup.py install")
     print('\n' * 3)
     print('importar as configurações dos arquivos dot')
+    print('instalar manualmente o i3-gaps. pesquise nos favoritos do google que você acha.')
     print(
         'criar um arquivo chamado meu_token.sh '
         'e colocar o token do pendrive nele.'
@@ -98,10 +95,23 @@ def main():
         'ora'
     ))
     print('baixar o google chrome.deb, visual_studio_code.deb')
-    print('instale o oh my zsh')
+    print('remover o firefox. snap remove firefox')
+    print('verifique se a instalação do oh-my-zsh foi feita com sucesso')
     # print('instalar o free-ofice e colocar a chave de ativação permanente nele')
-    print('executar manualmente a instalação das estenções do atom')
 
 
 if __name__ == '__main__':
-    main()
+    descricao = (
+        'programa que instala programas essenciais depois da formatação'
+    )
+    parser = ArgumentParser(
+        usage = 'python3 post_install.py ',
+        description=descricao,
+    )
+    parser.add_argument(
+        '--interface', type=str, default='i3-wm',
+        choices=['i3-wm', 'xfce4'], required=False,
+        help='instala uma interface de usuário para o sistema.'
+    )
+    argumentos = parser.parse_args()
+    main(argumentos)
