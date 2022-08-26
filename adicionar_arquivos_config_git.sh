@@ -30,3 +30,4 @@ config add ~/sites_interessantes.txt
 config add ~/git/dicas_para_comandos_git.txt
 config add ~/.config/ncmpcpp/config
 config add ~/.config/mpd/mpd.conf
+config add ~/.config/gtk-3.0/settings.ini

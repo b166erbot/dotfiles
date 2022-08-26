@@ -35,7 +35,7 @@ def main():
         'snapd', 'gnome-software-plugin-snap', 'transmission-gtk',
         'bash-completion', 'gnome-boxes', 'python3-pip', 'libreoffice',
         'zsh', 'curl', 'nano', 'i3-wm', 'rofi', 'nitrogen', 'picom', 'mpd',
-        'mpc', 'ncmpcpp'
+        'mpc', 'ncmpcpp', 'vlc'
     ] # poppler-utils -> pdf
     # gnome-software, loja de programas
     # o curl é preciso baixar pois ele será executado ali em baixo

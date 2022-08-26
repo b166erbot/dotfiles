@@ -192,6 +192,10 @@ bindsym Shift+Print exec xfce4-screenshooter -r
 # atalho para o gerenciador de tarefas 
 # bindsym Ctrl+Shift+Esc exec xfce4-taskmanager # não funciona
 
+# aplicativos abrindo com janela flutuante.
+for_window [class="Thunar"] floating enable
+# for_window [class="xfce4-terminal"] floating enable # não funciona
+
 
 # minhas cores
 # class                 border  backgr. text    indicator child_border
