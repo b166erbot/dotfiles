@@ -194,7 +194,9 @@ bindsym Shift+Print exec xfce4-screenshooter -r
 
 # aplicativos abrindo com janela flutuante.
 for_window [class="Thunar"] floating enable
-# for_window [class="xfce4-terminal"] floating enable # não funciona
+for_window [class="Parole"] floating enable
+for_window [class="video-downloader"] floating enable # não funciona
+for_window [class="xfce4-terminal"] floating enable # não funciona
 
 
 # minhas cores
@@ -230,11 +232,9 @@ gaps outer 15
 exec_always --no-startup-id mpd
 
 # compositores
-# executando o picom
-# exec_always picom -f
-
-# executando o compton
-exec_always --no-startup-id compton -b
+# executando o picom ou compton
+exec_always picom -f
+# exec_always --no-startup-id compton -b
 
 # colocar o wallpaper com o nitrogen
 exec_always nitrogen --restore

@@ -33,9 +33,11 @@ def main(argumentos):
         'zeal', 'usb-creator-gtk', 'arc-theme', 'gnome-disk-utility',
         'snapd', 'gnome-software-plugin-snap', 'transmission-gtk',
         'bash-completion', 'gnome-boxes', 'python3-pip', 'libreoffice',
-        'zsh', 'curl', 'nano', 'vlc'
-    ] # poppler-utils -> pdf
+        'zsh', 'curl', 'nano', 'vlc', 'file-roller'
+    ]
+    # poppler-utils -> pdf
     # gnome-software, loja de programas
+    # file-roller para arquivos zip
     # o curl é preciso baixar pois ele será executado ali em baixo
     sy('apt install -y ' + ' '.join(programas))
     sy('snap install video-downloader')
@@ -55,7 +57,7 @@ def main(argumentos):
     sy('chsh -s $(which zsh)')
     sy('cd /home/none && git clone https://github.com/zsh-users/'
        'zsh-syntax-highlighting.git')
-    
+
     # linkando coisas
     sy('ln -s /usr/bin/bpython3 /usr/bin/bpython')
 

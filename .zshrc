@@ -107,11 +107,10 @@ export PATH=$PATH:/home/none/.local/bin:/home/none/anaconda3/bin
 source $ZSH/oh-my-zsh.sh
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/meu_token.sh
+# colocando o comando conda no zsh
 source ~/anaconda3/etc/profile.d/conda.sh
-
-# Aliases
-alias config='git --git-dir=/home/none/.cfg/ --work-tree=/home/none' # git dotfiles
-alias portas_abertas='netstat -atunp'
+# Comunicado: eu movi os aliases para o arquivo .bash_aliases
+source ~/.bash_aliases
 
 python3 ~/bem_vindo.py
 
