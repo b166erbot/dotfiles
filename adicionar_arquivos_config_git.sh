@@ -32,3 +32,4 @@ config ~/git/dicas_para_comandos_git.txt
 config ~/.config/ncmpcpp/config
 config ~/.config/mpd/mpd.conf
 config ~/.config/gtk-3.0/settings.ini
+config ~/.config/picom/picom.conf
