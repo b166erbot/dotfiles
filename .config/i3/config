@@ -199,28 +199,28 @@ for_window [class="terminal"] floating enable
 
 # minhas cores
 # class                 border  backgr. text    indicator child_border
-#client.focused          #2a1a3f #2a1a3f #ffffff #2a1a3f   #2a1a3f
-#client.focused_inactive #0f0f0f #0f0f0f #ffffff #0f0f0f   #0f0f0f
-#client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-#client.urgent           #2f343a #900000 #ffffff #900000   #900000
-#client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused          #3d522f #7eb149 #ffffff #4c6b2c   #4c6b2c
+client.focused_inactive #3d522f #4c6b2c #ffffff #0f0f0f   #4c6b2c
+client.unfocused        #3d522f #4c6b2c #ffffff #292d2e   #4c6b2c
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-#client.background       #ffffff
+client.background       #ffffff
 
 # cores com o tema dracula
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+# client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+# client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+# client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+# client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+# client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
-client.background       #F8F8F2
+# client.background       #F8F8F2
 
 
 # gaps
-# desabilitar as bordas da janela.
-# for_window [class="^.*"] border pixel 5
+# desabilitar as bordas da janela.v
+# for_window [class="^.*"] border pixel 2
 
 # alterando o espaçamento entre as janelas
 gaps inner 10
