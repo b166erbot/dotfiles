@@ -75,7 +75,7 @@ def main(argumentos):
     if argumentos.interface == 'i3-wm':
         programas = [
             'i3-wm', 'rofi', 'nitrogen', 'picom', 'mpd',
-            'mpc', 'ncmpcpp', 'lynx'
+            'mpc', 'ncmpcpp', 'lynx', 'lxappearance'
         ]
     elif argumentos.interface == 'xfce4':
         programas = ['xfce4', 'xfce4-goodies']
