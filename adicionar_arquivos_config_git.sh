@@ -33,3 +33,4 @@ config ~/.config/ncmpcpp/config
 config ~/.config/mpd/mpd.conf
 config ~/.config/gtk-3.0/settings.ini
 config ~/.config/picom/picom.conf
+config ~/.config/rofi/config.rasi

@@ -108,7 +108,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/meu_token.sh
 # colocando o comando conda no zsh
-source ~/anaconda3/etc/profile.d/conda.sh
+# source ~/anaconda3/etc/profile.d/conda.sh
 # Comunicado: eu movi os aliases para o arquivo .bash_aliases
 source ~/.bash_aliases
 
