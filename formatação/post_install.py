@@ -28,27 +28,24 @@ def main(argumentos):
 
     # instalando programas
     programas = [
-        'python3-dev', 'glade', 'gimp', 'pycodestyle', 'git', 'poppler-utils',
+        'glade', 'gimp', 'pycodestyle', 'git', 'poppler-utils',
         'bpython', 'net-tools', 'simplescreenrecorder', 'papirus-icon-theme',
-        'zeal', 'usb-creator-gtk', 'arc-theme', 'gnome-disk-utility',
+        'zeal', 'usb-creator-gtk', 'arc-theme', 'gnome-disk-utility', # ou gparted
         'snapd', 'gnome-software-plugin-snap', 'transmission-gtk',
         'bash-completion', 'gnome-boxes', 'python3-pip', 'libreoffice',
         'zsh', 'curl', 'nano', 'vlc', 'file-roller'
     ]
     # poppler-utils -> pdf
     # gnome-software, loja de programas
-    # file-roller para arquivos zip
+    # file-roller para arquivos zip modo gráfico
     # o curl é preciso baixar pois ele será executado ali em baixo
     sy('apt install -y ' + ' '.join(programas))
     sy('snap install video-downloader')
     # woeusb (pendrive bootavel para windows no linux EXCENCIAL)
     # ventoy (pendrive bootabel para qualquer coisa)
 
-    # instalando extensões para o atom
-    # sy(f"apm install --packages-file {local}/atom.pacotes")
-
     # minhas ferramentas do python
-    sy('pip3 install pipenv poetry colored')
+    sy('pip3 install pipenv poetry colored pywal')
     # radon isort coverage pep257 pycodestyle
 
     # instalando o oh-my-zsh
@@ -74,18 +71,29 @@ def main(argumentos):
     # instalando a interface de usuário
     if argumentos.interface == 'i3-wm':
         programas = [
-            'i3-wm', 'rofi', 'nitrogen', 'picom', 'mpd',
-            'mpc', 'ncmpcpp', 'lynx', 'lxappearance'
+            'i3-wm', 'rofi', 'nitrogen', 'picom',
+            'lynx', 'lxappearance', 'polybar'
         ]
+        # [ncmpcpp mpd mpc]
     elif argumentos.interface == 'xfce4':
         programas = ['xfce4', 'xfce4-goodies']
     sy('apt install -y ' + ' '.join(programas))
+
+    # instalando temas para polybar
+    chdir('/tmp')
+    sy('git clone --depth=1 https://github.com/adi1090x/polybar-themes.git')
+    chdir('/tmp/polybar-themes')
+    sy('chmod +x setup.sh')
+    sy('./setup.sh')
+
+    chdir(local)
 
     # meus scripts
     # sy(f"python3 {local}/../scripts/setup.py install")
     # print(f"python3 {local}/../scripts/setup.py install")
     print('\n' * 3)
-    print('importar as configurações dos arquivos dot')
+    print('baixar o google chrome.deb, visual_studio_code.deb')
+    print('importar os dots. para importar vá no google e pesquise nos favoritos por dot')
     print('instalar manualmente o i3-gaps. pesquise nos favoritos do google que você acha.')
     print(
         'criar um arquivo chamado meu_token.sh '
@@ -96,9 +104,9 @@ def main(argumentos):
         'instalar os drivers da impressora. pesquisa no ddg o nome da impress'
         'ora'
     ))
-    print('baixar o google chrome.deb, visual_studio_code.deb')
     print('remover o firefox. snap remove firefox')
     print('verifique se a instalação do oh-my-zsh foi feita com sucesso')
+    print('reinicie o sistema para conferir, se for necessário.')
     # print('instalar o free-ofice e colocar a chave de ativação permanente nele')
 
 

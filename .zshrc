@@ -112,5 +112,15 @@ source ~/meu_token.sh
 # Comunicado: eu movi os aliases para o arquivo .bash_aliases
 source ~/.bash_aliases
 
-python3 ~/bem_vindo.py
 
+# colocando a cor do terminal com pywall
+# primeiro rode wal -i /local/da/imagem.jpg
+if [ -e ~/.cache/wal/sequences ]
+then
+    (cat ~/.cache/wal/sequences &);
+    source ~/.cache/wal/colors-tty.sh
+else
+    echo rode o comando wal -i /local/da/imagem.jpg
+fi
+
+python3 ~/bem_vindo.py

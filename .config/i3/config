@@ -226,8 +226,12 @@ client.background       #ffffff
 gaps inner 10
 gaps outer 15
 
+
+# restaurando a cor do terminal com pywal
+exec_always wal -R
+
 # executando o mpd para o ncmpcpp rodar
-exec_always --no-startup-id mpd
+# exec_always --no-startup-id mpd
 
 # compositores
 # executando o picom ou compton
@@ -238,7 +242,7 @@ exec_always picom -f
 exec_always nitrogen --restore
 
 # executar o polybar
-exec_always ~/.config/polybar/launch.sh --forest
+exec_always ~/.config/polybar/launch.sh --cuts
 
 # executar o notificador
 exec_always ~/notificacao/notificacao.sh

@@ -34,3 +34,4 @@ config ~/.config/mpd/mpd.conf
 config ~/.config/gtk-3.0/settings.ini
 config ~/.config/picom/picom.conf
 config ~/.config/rofi/config.rasi
+config ~/.rofi_cores/meu_tema_verde.rasi

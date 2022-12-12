@@ -3,10 +3,7 @@ from pathlib import Path
 
 
 def main():
-    local = Path(__file__).parent
-
-    # backup pacotes atom
-    # sy(f"apm list --installed --bare > {local}/atom.pacotes")
+    print('fazer backup dos arquivos da mãe!')
 
 
 if __name__ == '__main__':
