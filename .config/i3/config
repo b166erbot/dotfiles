@@ -196,6 +196,7 @@ for_window [class="Parole"] floating enable
 for_window [class="Video-downloader"] floating enable
 for_window [class="terminal"] floating enable
 for_window [class="Simple-scan"] floating enable
+for_window [class="Ristretto"] floating enable
 
 
 #### minhas cores

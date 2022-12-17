@@ -1,0 +1,18 @@
+$XONSH_COLOR_STYLE = 'monokai'
+$PROMPT = '{INTENSE_RED}{user}{RESET} at {INTENSE_PURPLE}{hostname}{RESET} in {BOLD_GREEN}{cwd}{RESET}\n↪ '
+xontrib load whole_word_jumping
+xontrib load bashisms
+# xontrib load coreutils  # comentado pois corrige o erro do cat do pywal
+if $USER == 'none':
+    source-bash ~/meu_token.sh --suppress-skip-message
+source-bash ~/.bash_aliases --suppress-skip-message
+
+
+from pathlib import Path
+if Path('~/.cache/wal/sequences').expanduser().exists():
+    (cat ~/.cache/wal/sequences)
+    # source-bash ~/.cache/wal/colors-tty.sh
+else:
+    echo rode o comando wal -i /local/da/imagem.jpg
+
+python3 ~/bem_vindo.py

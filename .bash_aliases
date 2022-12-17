@@ -5,9 +5,11 @@ alias portas_abertas='netstat -atunp'
 alias descompactar='tar -xzf'
 alias ver_tamanho='du -sh'
 alias tempo_de_inicializacao_dos_programas='systemd-analyze blame'
-alias git_stop_tracking="config rm --cached"
+alias git_parar_tracking="config rm --cached"
 alias fucking='sudo'
 alias abrir='exo-open'
+alias variaveis='set'
+
 
 # FUNÇÕES
 
