@@ -48,12 +48,19 @@ def main(argumentos):
     sy('pip3 install pipenv poetry colored pywal')
     # radon isort coverage pep257 pycodestyle
 
+    chdir(local)
+    
     # instalando o oh-my-zsh
-    sy('sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell'
-       '/oh-my-zsh/master/tools/install.sh)"')
+    sy(
+        'sh -c "$(curl -fsSL https://raw.githu'
+        'busercontent.com/robbyrussell'
+        '/oh-my-zsh/master/tools/install.sh)"'
+    )
     sy('chsh -s $(which zsh)')
-    sy('cd /home/none && git clone https://github.com/zsh-users/'
-       'zsh-syntax-highlighting.git')
+    sy(
+        'git clone https://github.com/zsh-users/'
+        'zsh-syntax-highlighting.git'
+    )
 
     # linkando coisas
     sy('ln -s /usr/bin/bpython3 /usr/bin/bpython')
@@ -79,21 +86,34 @@ def main(argumentos):
         programas = ['xfce4', 'xfce4-goodies']
     sy('apt install -y ' + ' '.join(programas))
 
-    # instalando temas para polybar
     chdir('/tmp')
+
+    # instalando temas para polybar
     sy('git clone --depth=1 https://github.com/adi1090x/polybar-themes.git')
     chdir('/tmp/polybar-themes')
     sy('chmod +x setup.sh')
     sy('./setup.sh')
 
-    chdir(local)
+    chdir('/home/none')
+
+    # instalando os dotfiles do meu repositório.
+    config_command = '/usr/bin/git --git-dir=/home/none/.cfg/ --work-tree=/home/none'
+    sy('rm .bashrc .zshrc')
+    sy('git clone --bare https://github.com/b166erbot/dotfiles /home/none/.cfg')
+    sy(config_command + ' checkout')
+    # não mudar a linha abaixo. sim, tem dois config
+    sy(config_command + ' config --local status.showUntrackedFiles no')
+
+    # copiando o .bash_aliases para o root
+    sy('cp .bash_aliases /root')
+
 
     # meus scripts
     # sy(f"python3 {local}/../scripts/setup.py install")
     # print(f"python3 {local}/../scripts/setup.py install")
     print('\n' * 3)
     print('baixar o google chrome.deb, visual_studio_code.deb')
-    print('importar os dots. para importar vá no google e pesquise nos favoritos por dot')
+    # print('importar os dots. para importar vá no google e pesquise nos favoritos por dot')
     print('instalar manualmente o i3-gaps. pesquise nos favoritos do google que você acha.')
     print(
         'criar um arquivo chamado meu_token.sh '

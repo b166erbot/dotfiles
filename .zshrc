@@ -101,7 +101,7 @@ plugins=(git)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # path
-export PATH=$PATH:/home/none/.local/bin:/home/none/anaconda3/bin
+export PATH=$PATH:$HOME/.local/bin:/home/none/anaconda3/bin
 
 # sources
 source $ZSH/oh-my-zsh.sh
@@ -113,7 +113,7 @@ source ~/meu_token.sh
 source ~/.bash_aliases
 
 
-# colocando a cor do terminal com pywall
+# colocando a cor do terminal com pywal
 # primeiro rode wal -i /local/da/imagem.jpg
 if [ -e ~/.cache/wal/sequences ]
 then

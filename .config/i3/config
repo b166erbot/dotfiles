@@ -195,28 +195,33 @@ for_window [class="Thunar"] floating enable
 for_window [class="Parole"] floating enable
 for_window [class="Video-downloader"] floating enable
 for_window [class="terminal"] floating enable
+for_window [class="Simple-scan"] floating enable
 
 
-# minhas cores
+#### minhas cores
 # class                 border  backgr. text    indicator child_border
-client.focused          #3d522f #7eb149 #ffffff #4c6b2c   #4c6b2c
-client.focused_inactive #3d522f #4c6b2c #ffffff #0f0f0f   #4c6b2c
-client.unfocused        #3d522f #4c6b2c #ffffff #292d2e   #4c6b2c
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+# client.focused          #3d522f #7eb149 #ffffff #4c6b2c   #4c6b2c
+# client.focused_inactive #3d522f #4c6b2c #ffffff #0f0f0f   #4c6b2c
+# client.unfocused        #3d522f #4c6b2c #ffffff #292d2e   #4c6b2c
+# client.urgent           #2f343a #900000 #ffffff #900000   #900000
+# client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-client.background       #ffffff
+# client.background       #ffffff
 
-# cores com o tema dracula
-# class                 border  bground text    indicator child_border
-# client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-# client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-# client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-# client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-# client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
-# client.background       #F8F8F2
+#### cores automáticas geridas pelo pywal
+set_from_resource $fg i3wm.color7 #000000
+set_from_resource $bg i3wm.color2 #000000
+set_from_resource $!focus i3wm.color1 #000000
 
+# class                 border   backgr.  text indicator child_border
+client.focused          $bg      $bg      $fg  $bg       $bg
+client.focused_inactive $!focus  $!focus  $fg  $bg       $!focus
+client.unfocused        $!focus  $!focus  $fg  $bg       $!focus
+client.urgent           $bg      $bg      $fg  $bg       $bg
+client.placeholder      $bg      $bg      $fg  $bg       $bg
+
+client.background       $bg
 
 # gaps
 # desabilitar as bordas da janela.v
