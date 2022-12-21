@@ -3,6 +3,7 @@ from os import getuid
 from pathlib import Path
 from os import chdir
 from argparse import ArgumentParser
+from subprocess import run
 
 
 def root() -> bool:
@@ -30,11 +31,12 @@ def main(argumentos):
     programas = [
         'glade', 'gimp', 'pycodestyle', 'git', 'poppler-utils',
         'bpython', 'net-tools', 'simplescreenrecorder', 'papirus-icon-theme',
-        'zeal', 'usb-creator-gtk', 'arc-theme', 'gnome-disk-utility', # ou gparted
+        'zeal', 'usb-creator-gtk', 'arc-theme', 'gnome-disk-utility',
         'snapd', 'gnome-software-plugin-snap', 'transmission-gtk',
         'bash-completion', 'gnome-boxes', 'python3-pip', 'libreoffice',
         'zsh', 'curl', 'nano', 'vlc', 'file-roller'
     ]
+    # gnome-disk-utility ou gparted
     # poppler-utils -> pdf
     # gnome-software, loja de programas
     # file-roller para arquivos zip modo gráfico
@@ -104,29 +106,43 @@ def main(argumentos):
     # não mudar a linha abaixo. sim, tem dois config
     sy(config_command + ' config --local status.showUntrackedFiles no')
 
-    # copiando o .bash_aliases para o root
-    sy('cp .bash_aliases /root')
+    # linkando o .bash_aliases para o root
+    sy('ln -s .bash_aliases /root')
 
 
     # meus scripts
     # sy(f"python3 {local}/../scripts/setup.py install")
     # print(f"python3 {local}/../scripts/setup.py install")
+
+    chdir(local)
+    
+    # movendo os arquivos backup do pendrive para seus respectivos lugares
+    # su -c "comando" -s /bin/sh nomedoUsuario
+    run('su none -c ./restaurar_backup.py'.split())
+
     print('\n' * 3)
     print('baixar o google chrome.deb, visual_studio_code.deb')
     # print('importar os dots. para importar vá no google e pesquise nos favoritos por dot')
-    print('instalar manualmente o i3-gaps. pesquise nos favoritos do google que você acha.')
+    print(
+        'instalar manualmente o i3-gaps. pesquise nos favoritos por'
+        ' i3-gaps no google que você acha.'
+    )
     print(
         'criar um arquivo chamado meu_token.sh '
         'e colocar o token do pendrive nele.'
     )
     print('baixar o executável do telegram pelo site')
-    print((
+    print(
         'instalar os drivers da impressora. pesquisa no ddg o nome da impress'
         'ora'
-    ))
+    )
     print('remover o firefox. snap remove firefox')
     print('verifique se a instalação do oh-my-zsh foi feita com sucesso')
     print('reinicie o sistema para conferir, se for necessário.')
+    print(
+        'alterar a imagem de login com o lightdm-gtk-greeter-settings.'
+        ' a imagem deve ser colocada no /usr/share/wallpapers com sudo.'
+    )
     # print('instalar o free-ofice e colocar a chave de ativação permanente nele')
 
 

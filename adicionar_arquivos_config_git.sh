@@ -27,6 +27,8 @@ config ~/adicionar_arquivos_config_git.sh
 config ~/bem_vindo.py
 config ~/formatação/post_install.py
 config ~/formatação/pre_install.py
+config ~/formatação/_utils.py
+config ~/formatação/restaurar_backup.py
 config ~/sites_interessantes.txt
 config ~/git/dicas_para_comandos_git.txt
 config ~/.config/ncmpcpp/config

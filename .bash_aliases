@@ -9,6 +9,7 @@ alias git_parar_tracking="config rm --cached"
 alias fucking='sudo'
 alias abrir='exo-open'
 alias variaveis='set'
+alias meu_ip="echo $(ifconfig | grep broadcast | awk '{print $2}')"
 
 
 # FUNÇÕES
