@@ -188,6 +188,7 @@ bar {
 # bindsym Print exec xfce4-screenshooter -fc # não funciona.
 bindsym Print exec xfce4-screenshooter -f
 bindsym Shift+Print exec xfce4-screenshooter -r
+bindsym Ctrl+Shift+Print exec xfce4-screenshooter -w
 # bindsym Ctrl+Shift+Esc exec xfce4-taskmanager # não funciona
 
 # aplicativos abrindo com janela flutuante.

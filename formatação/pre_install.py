@@ -13,6 +13,7 @@ def root() -> bool:
 
 
 def remover_arquivos(caminho, extensao, caminhos_remover):
+    """Pega o caminho e remove de dentro dele, os quais não foram escolhidos"""
     # a ordem importa, portanto, tem que vir primeiro *.* e depois *
     caminho = Path(str(caminho).replace(extensao, ''))
     arquivos = set(map(
@@ -24,6 +25,37 @@ def remover_arquivos(caminho, extensao, caminhos_remover):
         )
         arquivos -= set(caminhos_remover)
     return list(arquivos)
+
+
+def passar_regex(expressao, texto):
+    """Passa o regex no texto e retorna os resultados."""
+    regex = re.compile(expressao)
+    tuplas_de_texto = regex.findall(texto)
+    texto_recortado = list(filter(
+        lambda texto: bool(texto), chain(*tuplas_de_texto)
+    ))
+    return texto_recortado
+
+
+def pegar_caminhos():
+    """Pega as entradas do usuário, verifica se existem e as retorna."""
+    expressao_regular = '[\"\']([^\"\']+)[\"\']|([^\'\"\s-]+)'
+    entradas = []
+    while True:
+        entrada = input('>>> ')
+        if not bool(entrada):
+            break
+        entrada_recortada = passar_regex(expressao_regular, entrada)
+        caminho, _ = corrigir_caminho(entrada_recortada[0])
+        if not caminho.exists():
+            print('Erro: arquivo ou pasta não existe')
+        else:
+            entradas.append(entrada)
+            if caminho.is_dir():
+                print('pasta adicionada')
+            elif caminho.is_file():
+                print('arquivo adicionado')
+    return entradas
 
 
 def main():
@@ -62,48 +94,16 @@ def main():
     if resposta == 'novo':
         print('usagem:', '~/Downloads/*', '~/*.*', '~/Downloads', sep='\n')
         print('~/Downloads - isos "Telegram Desktop" \'teste teste.mp3\'')
+        print('"/home/user/teste teste"')
         print('digite abaixo as pastas ou arquivos que deseja copiar:')
         print('(para terminar, precione enter com o texto vazio)')
-        regex = re.compile('[\"\']([^\"\']+)[\"\']|([^\'\"\s-]+)')
-        arquivos_ou_pastas = []
-        while True:
-            caminho = input('>>> ')
-            if not bool(caminho):
-                break
-            caminhos = regex.findall(caminho)
-            caminhos = [
-                caminho_
-                for caminho_ in chain(*caminhos)
-                if bool(caminho_)
-            ]
-            caminho, *caminhos_remover = caminhos
-            caminho = corrigir_caminho(caminho)
-            if str(caminho).endswith('*.*'):
-                arquivos_ou_pastas += remover_arquivos(
-                    caminho, '*.*', caminhos_remover
-                )
-                print('arquivos adicionados')
-            elif str(caminho).endswith('*'):
-                arquivos_ou_pastas += remover_arquivos(
-                    caminho, '*', caminhos_remover
-                )
-                print('arquivos e pastas adicionados')
-            elif caminho.exists():
-                if caminho.is_dir():
-                    arquivos_ou_pastas += remover_arquivos(
-                        caminho, '*', caminhos_remover
-                    )
-                else:
-                    arquivos_ou_pastas.append(str(caminho))
-                print('arquivo ou pasta adicionada')
-            else:
-                print('Erro: arquivo ou pasta não existe')
+        entradas = pegar_caminhos()
         with open('configuracoes.json', 'w') as configfile:
-            json.dump(arquivos_ou_pastas, configfile, indent=4)
+            json.dump(entradas, configfile, indent=4)
     else:
         if Path('configuracoes.json').exists():
             with open('configuracoes.json') as configfile:
-                arquivos_ou_pastas = json.load(configfile)
+                entradas = json.load(configfile)
         else:
             print(
                 'Erro: o arquivo de configuração não '
@@ -113,30 +113,53 @@ def main():
             )
             exit(1)
     while True:
-        print('digite o caminho para o pendrive')
-        caminho = Path(input('>>> '))
-        if caminho.name == 'fim':
+        print('digite o caminho para o pendrive ou digite fim para terminar')
+        destino_pendrive = Path(input('>>> '))
+        if destino_pendrive.name == 'fim':
             exit()
         print('tem certeza que este é o caminho correto? [sim/não/s/n]')
         confirmar = input('>>> ')
         if confirmar in ['sim', 's']:
             break
-    caminho = caminho / Path('backup')
-    if caminho.exists():
-        if caminho.is_file():
+    destino_pendrive = destino_pendrive / Path('backup')
+    if destino_pendrive.exists():
+        if destino_pendrive.is_file():
             raise Exception(
                 'já existe um arquivo com o nome backup '
                 'na pasta do pendrive, favor remover.'
             )
-        elif caminho.is_dir():
+        elif destino_pendrive.is_dir():
             raise IsADirectoryError(
                 'o diretório backup já existe no pendrive, favor arrumar.'
             )
     else:
-        caminho.mkdir()
+        destino_pendrive.mkdir()
+    expressao_regular = '[\"\']([^\"\']+)[\"\']|([^\'\"\s-]+)'
+    arquivos_ou_pastas = []
+    for entrada in entradas:
+        entrada_recortada = passar_regex(expressao_regular, entrada)
+        caminho, *caminhos_remover = entrada_recortada
+        caminho, extensao = corrigir_caminho(caminho)
+        # por obrigatoriedade, o '*.*' vem primeiro que o '*'
+        if extensao == '*.*':
+            arquivos_ou_pastas += remover_arquivos(
+                caminho, '*.*', caminhos_remover
+            )
+        elif extensao == '*':
+            arquivos_ou_pastas += remover_arquivos(
+                caminho, '*', caminhos_remover
+            )
+        else:
+            if caminho.is_dir() and bool(len(caminhos_remover)):
+                arquivos_ou_pastas += remover_arquivos(
+                    caminho, '*', caminhos_remover
+                )
+            else:
+                arquivos_ou_pastas.append(str(caminho))
+
     for item in arquivos_ou_pastas:
         local_destino = Path(item.replace(pasta_home, ''))
-        caminho_final = caminho / local_destino
+        caminho_final = destino_pendrive / local_destino
         if not caminho_final.parent.exists():
             caminho_final.parent.mkdir(parents=True)
         if Path(item).is_dir():
@@ -152,4 +175,4 @@ if __name__ == '__main__':
     main()
 
 
-# verificar se há espaço no pendrive antes de copiar.
+# tem um problema, se seu colocar mais arquivos no downloads, eles serão ignorados.

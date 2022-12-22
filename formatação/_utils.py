@@ -10,7 +10,16 @@ def pegar_entrada(texto, opcoes):
 
 
 def corrigir_caminho(caminho):
-    if caminho.startswith('~'):
-        return Path(caminho).expanduser()
+    if caminho.endswith('*.*'):
+        caminho = caminho[:-3]
+        extensao = '*.*'
+    elif caminho.endswith('*'):
+        caminho = caminho[:-1]
+        extensao = '*'
     else:
-        return Path(caminho)
+        extensao = ''
+    if caminho.startswith('~'):
+        caminho = Path(caminho).expanduser()
+    else:
+        caminho = Path(caminho)
+    return caminho, extensao

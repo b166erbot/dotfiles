@@ -143,6 +143,10 @@ def main(argumentos):
         'alterar a imagem de login com o lightdm-gtk-greeter-settings.'
         ' a imagem deve ser colocada no /usr/share/wallpapers com sudo.'
     )
+    print(
+        'clonar o repositorio das notificações. ele está oculto, '
+        'portanto vai precisar de senha'
+    )
     # print('instalar o free-ofice e colocar a chave de ativação permanente nele')
 
 
