@@ -1,7 +1,6 @@
 from unittest import TestCase
 from unittest.mock import patch, MagicMock
-from pre_install import passar_regex, pegar_caminhos
-import sys
+from fazer_backup import passar_regex, pegar_caminhos
 
 
 print('para os testes rodarem, é necessário que as pastas existam no computador')
@@ -133,8 +132,8 @@ class TestPegarCaminhos(TestCase):
         ''
     ]
 
-    @patch('pre_install.print')
-    @patch('pre_install.input', side_effect=side_eff)
+    @patch('fazer_backup.print')
+    @patch('fazer_backup.input', side_effect=side_eff)
     def test_todos_os_textos_possiveis_sendo_testados(self, *_):
         esperado = [
             '~/Downloads/ - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste.py\'',
