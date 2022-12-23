@@ -65,12 +65,15 @@ def restaurar_backup(argumentos):
 
 
 if __name__ == '__main__':
+    descricao = (
+        'programa que faz o restaura o backup do pendrive para o computador'
+    )
     usagem = (
         'python3 restaurar_backup.py --usuario <usuário> '
         '--origem-pendrive <local do pendrive>'
     )
     parser = ArgumentParser(
-        usage = usagem
+        usage = usagem, desctiption = descricao
     )
     parser.add_argument(
         '--usuario', type=str, required = True,
