@@ -3,7 +3,7 @@ from os import getuid
 from pathlib import Path
 from os import chdir
 from argparse import ArgumentParser
-from subprocess import run
+from restaurar_backup import restaurar_backup
 
 
 def root() -> bool:
@@ -118,7 +118,9 @@ def main(argumentos):
     
     # movendo os arquivos backup do pendrive para seus respectivos lugares
     # su -c "comando" -s /bin/sh nomedoUsuario
-    run('su none -c ./restaurar_backup.py'.split())
+    # from subprocess import run
+    # run('su none -c ./restaurar_backup.py'.split())
+    restaurar_backup(argumentos)
 
     print('\n' * 3)
     print('baixar o google chrome.deb, visual_studio_code.deb')
@@ -152,16 +154,29 @@ def main(argumentos):
 
 if __name__ == '__main__':
     descricao = (
-        'programa que instala programas essenciais depois da formatação'
+        'programa que faz o post install de uma distro derivada de debian'
+    )
+    usagem = (
+        'sudo python3 post_install.py --usuario <usuário> '
+        '--origem-pendrive <local do pendrive> '
+        '[--interface <interface>]'
     )
     parser = ArgumentParser(
-        usage = 'python3 post_install.py ',
+        usage = usagem,
         description=descricao,
     )
     parser.add_argument(
-        '--interface', type=str, default='i3-wm',
-        choices=['i3-wm', 'xfce4'], required=False,
-        help='instala uma interface de usuário para o sistema.'
+        '--interface', type = str, default = 'i3-wm',
+        choices = ['i3-wm', 'xfce4'], required = False,
+        help = 'instala uma interface de usuário para o sistema.'
+    )
+    parser.add_argument(
+        '--usuario', type=str, required = True,
+        help = 'nome do usuário logado na máquina no momento'
+    )
+    parser.add_argument(
+        '--origem-pendrive', type = str, required = True,
+        help = 'local do pendrive para fazer a restauração do backup'
     )
     argumentos = parser.parse_args()
     main(argumentos)

@@ -1,11 +1,12 @@
-from os import chdir, getuid
+from os import getuid
 from pathlib import Path
 import json
-from _utils import pegar_entrada, corrigir_caminho
+from _utils import corrigir_caminho, pegar_entrada
 from shutil import copy, copytree
 from pwd import getpwnam
 import re
 from itertools import chain
+from argparse import ArgumentParser
 
 
 def root() -> bool:
@@ -58,10 +59,7 @@ def pegar_caminhos():
     return entradas
 
 
-def main():
-    local = Path(__file__).parent
-    chdir(local)
-
+def main(argumentos):
     if root():
         print('o pre_install seria melhor ser executado com o usuário comum')
         exit(1)
@@ -73,34 +71,31 @@ def main():
         ' e clicar no pendrive.'
     )
     print('verifique também se o pendrive tem espaço para as músicas.\n')
-    while True:
-        print('digite o nome do seu usuário')
-        usuario = input('>>> ')
-        try:
-            usuario_final = getpwnam(usuario)
-            break
-        except KeyError:
-            print('Erro: usuário não existe')
-            continue
+    resposta = pegar_entrada('está pronto?', ['sim', 's', 'não', 'nao', 'n'])
+    if resposta.lower() in ['nao', 'não', 'n']:
+        exit(1)
+    
+    try:
+        usuario_final = getpwnam(argumentos.usuario)
+    except KeyError:
+        print('Erro: usuário não existe.')
+        exit(1)
+    pasta_home = usuario_final.pw_dir
 
-    pasta_home = usuario_final.pw_dir + '/'
-
-    texto = (
-        'deseja carregar o arquivo configuracoes.ini ou criar um novo? '
-        'responda com "carregar/novo"'
-    )
-    opcoes = ['carregar', 'novo']
-    resposta = pegar_entrada(texto, opcoes)
-    if resposta == 'novo':
+    if argumentos.config_arquivo == 'novo':
+        print('digite abaixo as pastas ou arquivos que deseja copiar:')
         print('usagem:', '~/Downloads/*', '~/*.*', '~/Downloads', sep='\n')
         print('~/Downloads - isos "Telegram Desktop" \'teste teste.mp3\'')
+        print(
+            'o sinal de "menos" acima serve para remover pastas '
+            'para não serem copiadas'
+        )
         print('"/home/user/teste teste"')
-        print('digite abaixo as pastas ou arquivos que deseja copiar:')
         print('(para terminar, precione enter com o texto vazio)')
         entradas = pegar_caminhos()
         with open('configuracoes.json', 'w') as configfile:
             json.dump(entradas, configfile, indent=4)
-    else:
+    elif argumentos.config_arquivo == 'carregar':
         if Path('configuracoes.json').exists():
             with open('configuracoes.json') as configfile:
                 entradas = json.load(configfile)
@@ -112,21 +107,13 @@ def main():
                 'a serem copiadas(os)'
             )
             exit(1)
-    while True:
-        print('digite o caminho para o pendrive ou digite fim para terminar')
-        destino_pendrive = Path(input('>>> '))
-        if destino_pendrive.name == 'fim':
-            exit()
-        print('tem certeza que este é o caminho correto? [sim/não/s/n]')
-        confirmar = input('>>> ')
-        if confirmar in ['sim', 's']:
-            break
-    destino_pendrive = destino_pendrive / Path('backup')
+
+    destino_pendrive = argumentos.destino_pendrive / Path('backup')
     if destino_pendrive.exists():
         if destino_pendrive.is_file():
             raise Exception(
                 'já existe um arquivo com o nome backup '
-                'na pasta do pendrive, favor remover.'
+                'na pasta do pendrive, favor arrumar.'
             )
         elif destino_pendrive.is_dir():
             raise IsADirectoryError(
@@ -140,7 +127,7 @@ def main():
         entrada_recortada = passar_regex(expressao_regular, entrada)
         caminho, *caminhos_remover = entrada_recortada
         caminho, extensao = corrigir_caminho(caminho)
-        # por obrigatoriedade, o '*.*' vem primeiro que o '*'
+        # por obrigatoriedade, o '*.*' vem primeiro que o '*' se não dá bug
         if extensao == '*.*':
             arquivos_ou_pastas += remover_arquivos(
                 caminho, '*.*', caminhos_remover
@@ -158,7 +145,7 @@ def main():
                 arquivos_ou_pastas.append(str(caminho))
 
     for item in arquivos_ou_pastas:
-        local_destino = Path(item.replace(pasta_home, ''))
+        local_destino = Path(item).relative_to(pasta_home)
         caminho_final = destino_pendrive / local_destino
         if not caminho_final.parent.exists():
             caminho_final.parent.mkdir(parents=True)
@@ -172,7 +159,29 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
-
-
-# tem um problema, se seu colocar mais arquivos no downloads, eles serão ignorados.
+    descricao = (
+        'programa que faz o pre install de uma distro derivada de debian'
+    )
+    usagem = (
+        'python3 pre_install.py --usuario <usuário> --destino-pendrive '
+        '<local pendrive> [--config-arquivo <arquivo de configuração>]'
+    )
+    parser = ArgumentParser(
+        usage = usagem,
+        description = descricao
+    )
+    parser.add_argument(
+        '--usuario', type=str, required = True,
+        help = 'nome do usuário logado na máquina no momento'
+    )
+    parser.add_argument(
+        '--destino-pendrive', type=str, required = True,
+        help = 'pendrive de destino para fazer o backup'
+    )
+    parser.add_argument(
+        '--config-arquivo', type=str, required = False,
+        default = 'novo', choices = ['novo', 'carregar'],
+        help = 'arquivo de configuração a ser carregado'
+    )
+    argumentos = parser.parse_args()
+    main(argumentos)

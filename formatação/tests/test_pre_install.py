@@ -133,17 +133,9 @@ class TestPegarCaminhos(TestCase):
         ''
     ]
 
-
-    @classmethod
-    def setUpClass(cls) -> None:
-        sys.stdout = MagicMock()
-    
-    @classmethod
-    def tearDownClass(cls) -> None:
-        sys.stdout = sys.__stdout__
-
+    @patch('pre_install.print')
     @patch('pre_install.input', side_effect=side_eff)
-    def test_todos_os_textos_possiveis_sendo_testados(self, mock):
+    def test_todos_os_textos_possiveis_sendo_testados(self, *_):
         esperado = [
             '~/Downloads/ - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste.py\'',
             '/home/none/Downloads - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste\'',
