@@ -1,11 +1,16 @@
 from pathlib import Path
 import json
-from _utils import corrigir_caminho, pegar_entrada
 from shutil import copy, copytree
 from pwd import getpwnam
 import re
 from itertools import chain
 from argparse import ArgumentParser
+
+
+try:
+    from .utils import corrigir_caminho, pegar_entrada
+except ImportError:
+    from utils import corrigir_caminho, pegar_entrada
 
 
 def remover_arquivos(caminho, extensao, caminhos_remover):
@@ -65,7 +70,7 @@ def fazer_backup(argumentos):
     resposta = pegar_entrada('está pronto?', ['sim', 's', 'não', 'nao', 'n'])
     if resposta.lower() in ['nao', 'não', 'n']:
         exit(1)
-    
+
     try:
         usuario_final = getpwnam(argumentos.usuario)
     except KeyError:
@@ -99,7 +104,7 @@ def fazer_backup(argumentos):
             )
             exit(1)
 
-    destino_pendrive = argumentos.destino_pendrive / Path('backup')
+    destino_pendrive = argumentos.pendrive / Path('backup')
     if destino_pendrive.exists():
         if destino_pendrive.is_file():
             raise Exception(
@@ -153,7 +158,7 @@ if __name__ == '__main__':
         'o pendrive'
     )
     usagem = (
-        'python3 fazer_backup.py --usuario <usuário> --destino-pendrive '
+        'python3 fazer_backup.py --usuario <usuário> --pendrive '
         '<local do pendrive> [--config-arquivo <carregar/novo>]'
     )
     parser = ArgumentParser(
@@ -164,7 +169,7 @@ if __name__ == '__main__':
         help = 'nome do usuário logado na máquina no momento'
     )
     parser.add_argument(
-        '--destino-pendrive', type=str, required = True,
+        '--pendrive', type=str, required = True,
         help = 'pendrive de destino para fazer o backup'
     )
     parser.add_argument(

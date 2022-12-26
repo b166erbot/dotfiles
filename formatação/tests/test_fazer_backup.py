@@ -1,9 +1,6 @@
 from unittest import TestCase
-from unittest.mock import patch, MagicMock
-from fazer_backup import passar_regex, pegar_caminhos
-
-
-print('para os testes rodarem, é necessário que as pastas existam no computador')
+from unittest.mock import patch
+from src.fazer_backup import passar_regex, pegar_caminhos
 
 
 class TestPassarRegex(TestCase):
@@ -114,6 +111,7 @@ class TestPassarRegex(TestCase):
         self.assertEqual(resultado, esperado)
 
 
+@patch('src.fazer_backup.print')
 class TestPegarCaminhos(TestCase):
     side_eff = [
         '~/Downloads/ - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste.py\'',
@@ -131,10 +129,16 @@ class TestPegarCaminhos(TestCase):
         '/home/none',
         ''
     ]
+    side_eff2 = [
+        'esta pasta não existe',
+        'nem esta',
+        '/home/none/não existe',
+        ''
+    ]
 
-    @patch('fazer_backup.print')
-    @patch('fazer_backup.input', side_effect=side_eff)
-    def test_todos_os_textos_possiveis_sendo_testados(self, *_):
+    @patch('src.fazer_backup.input', side_effect = side_eff)
+    @patch('src.fazer_backup.Path.exists', return_value = True)
+    def test_retornando_as_exatas_pastas_caso_elas_existam(self, *_):
         esperado = [
             '~/Downloads/ - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste.py\'',
             '/home/none/Downloads - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste\'',
@@ -150,5 +154,12 @@ class TestPegarCaminhos(TestCase):
             '/home/none/*.*',
             '/home/none'
         ]
+        resultado = pegar_caminhos()
+        self.assertEqual(resultado, esperado)
+
+    @patch('src.fazer_backup.input', side_effect = side_eff2)
+    @patch('src.fazer_backup.Path.exists', return_value = False)
+    def test_nao_retornando_as_pastas_caso_elas_nao_existam(self, *_):
+        esperado = []
         resultado = pegar_caminhos()
         self.assertEqual(resultado, esperado)

@@ -1,5 +1,5 @@
 from unittest import TestCase
-from _utils import corrigir_caminho
+from src.utils import corrigir_caminho
 from pathlib import Path
 
 
@@ -9,7 +9,7 @@ class TestCorrigirCaminho(TestCase):
         resultado = corrigir_caminho(texto)
         esperado = (Path('~/Downloads').expanduser(), '*.*')
         self.assertEqual(resultado, esperado)
-    
+
     def test_separando_a_extensao_do_caminho_asterisco_ponto_asterisco(self):
         texto = '~/Downloads/*.*'
         resultado = corrigir_caminho(texto)

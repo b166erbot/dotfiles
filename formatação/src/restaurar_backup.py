@@ -1,10 +1,14 @@
-#!/usr/bin/python3
-from _utils import pegar_entrada
 from shutil import copy, copytree, rmtree, chown
 from pathlib import Path
 from pwd import getpwnam
 from os import walk
 from argparse import ArgumentParser
+
+
+try:
+    from .utils import pegar_entrada
+except ImportError:
+    from utils import pegar_entrada
 
 
 def caminhar(caminho):
@@ -37,7 +41,7 @@ def restaurar_backup(argumentos):
         exit(1)
     pasta_home = Path(usuario_final.pw_dir)
 
-    caminho = argumentos.origem_pendrive / Path('backup')
+    caminho = argumentos.pendrive / Path('backup')
     if not caminho.exists():
         print(
             f'Erro: não existe o caminho {caminho}'
@@ -70,17 +74,17 @@ if __name__ == '__main__':
     )
     usagem = (
         'python3 restaurar_backup.py --usuario <usuário> '
-        '--origem-pendrive <local do pendrive>'
+        '--pendrive <local do pendrive>'
     )
     parser = ArgumentParser(
-        usage = usagem, desctiption = descricao
+        usage = usagem, description = descricao
     )
     parser.add_argument(
         '--usuario', type=str, required = True,
         help = 'nome do usuário logado na máquina no momento'
     )
     parser.add_argument(
-        '--origem-pendrive', type = str, required = True,
+        '--pendrive', type = str, required = True,
         help = 'local do pendrive para fazer a restauração do backup'
     )
     argumentos = parser.parse_args()
