@@ -4,8 +4,7 @@ from src.fazer_backup import passar_regex, pegar_caminhos
 
 
 class TestPassarRegex(TestCase):
-    def setUp(self):
-        self.expressao = '[\"\']([^\"\']+)[\"\']|([^\'\"\s-]+)'
+    expressao = '[\"\']([^\"\']+)[\"\']|([^\'\"\s-]+)'
     
     def test_texto_1(self):
         texto = '~/Downloads/ - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste.py\''

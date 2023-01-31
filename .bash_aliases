@@ -10,6 +10,7 @@ alias fucking='sudo'
 alias abrir='exo-open'
 alias variaveis='set'
 alias meu_ip="echo $(ifconfig | grep broadcast | awk '{print $2}')"
+alias meus_alias='cat ~/.bash_aliases'
 
 
 # FUNÇÕES

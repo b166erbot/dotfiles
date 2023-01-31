@@ -184,11 +184,14 @@ bar {
 }
 
 
-# atalhos
+# atalhos.
+# antigos comandos para executar o xfce4-screenshooter.
 # bindsym Print exec xfce4-screenshooter -fc # não funciona.
-bindsym Print exec xfce4-screenshooter -f
-bindsym Shift+Print exec xfce4-screenshooter -r
-bindsym Ctrl+Shift+Print exec xfce4-screenshooter -w
+# bindsym Print exec xfce4-screenshooter -f
+# bindsym Shift+Print exec xfce4-screenshooter -r
+bindsym Print exec flameshot gui
+# bindsym Ctrl+Shift+Print exec xfce4-screenshooter -w
+
 # bindsym Ctrl+Shift+Esc exec xfce4-taskmanager # não funciona
 
 # aplicativos abrindo com janela flutuante.
@@ -253,3 +256,6 @@ exec_always ~/.config/polybar/launch.sh --cuts
 
 # executar o notificador
 exec_always ~/notificacao/notificacao.sh
+
+# executando o flameshot
+exec_always flameshot

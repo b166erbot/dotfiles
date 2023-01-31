@@ -117,8 +117,8 @@ source ~/.bash_aliases
 # primeiro rode wal -i /local/da/imagem.jpg
 if [ -e ~/.cache/wal/sequences ]
 then
-    (cat ~/.cache/wal/sequences &);
-    source ~/.cache/wal/colors-tty.sh
+     (cat ~/.cache/wal/sequences &);
+     source ~/.cache/wal/colors-tty.sh
 else
     echo rode o comando wal -i /local/da/imagem.jpg
 fi

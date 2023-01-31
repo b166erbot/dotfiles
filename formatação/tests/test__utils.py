@@ -22,13 +22,13 @@ class TestCorrigirCaminho(TestCase):
         esperado = ('*')
         self.assertEqual(resultado[1], esperado)
     
-    def test_caminho_sem_extensao_retornando_extensao_vasia(self):
+    def test_caminho_sem_extensao_retornando_extensao_vazia(self):
         texto = '~/Downloads'
         resultado = corrigir_caminho(texto)
         esperado = (Path('~/Downloads').expanduser(), '')
         self.assertEqual(resultado, esperado)
     
-    def test_caminho_explicito_com_extensao_retornando_caminho_e_extensao_asterisco_ponto_asterisco(self):
+    def test_caminho_completo_com_extensao_retornando_caminho_e_extensao_asterisco_ponto_asterisco(self):
         texto = '/home/none/*.*'
         resultado = corrigir_caminho(texto)
         esperado = (Path('/home/none'), '*.*')
