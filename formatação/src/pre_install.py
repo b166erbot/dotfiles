@@ -1,21 +1,16 @@
 from os import getuid
-
-
-try:
-    from .fazer_backup import fazer_backup
-except ImportError:
-    from fazer_backup import fazer_backup
+from src.fazer_backup import main
 
 
 def root() -> bool:
     return getuid() == 0
 
 
-def pre_install(argumentos):
+def pre_install():
     if root():
-        print('o pre_install seria melhor ser executado com o usuário comum')
+        print('o pre_install seria melhor executado com o usuário comum')
         exit(1)
 
-    fazer_backup(argumentos)
+    main()
     print('agora, alguns lembretes:')
     print('fazer backup dos arquivos da mãe!')

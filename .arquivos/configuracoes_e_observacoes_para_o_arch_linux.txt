@@ -1,0 +1,76 @@
+- archinstall sem suporte a swap
+o script archinstall não tem suporte a swap, o que significa que
+você você pode até criar uma partição mas não poderá marcar pra
+formatar a partição swap ou monta-lá.
+
+- desmarque a opção swap no script
+porque senão o script vai criar outra swap que não é desejada
+
+- configurações do arch linux
+https://wiki.archlinux.org/title/installation_guide#Localization
+arrumar a bagunça do locale para pt_BR.UTF-8
+
+- instalar o yay
+sudo pacman -S --needed base-devel git
+mkdir ~/git
+cd ~/git
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+depois de instalado, rode o yay -Sy
+
+- importantissimo, instalar o google-chrome
+yay -S google-chrome
+de quebra, instalar o rofi e configurar o i3 pra abrir o rofi
+pacman -S rofi
+
+
+- instalar o programa para configurar as impressoras
+pacman -S system-config-printer
+caso der erro de ValueError: Namespace "Handy"...
+instale a biblioteca handy com o yay
+yay -S libhandy ou yay libhandy e escolha o que tenha o mesmo nome que libhandy
+
+- iniciar o serviço do cups para a impressora
+systemctl start cups
+
+- instalar o brscan4 para poder escanear folhas
+yay -S brscan4
+
+- instalar o simple-scan
+yay simple-scan ou pacman -S simple-scan eu não me lembro
+
+- como instalar o pacaur
+primeiro instale o auracle-git expac jq pelo pacman ou yay
+cd ~/git
+git clone https://aur.archlinux.org/pacaur.git
+cd pacaur
+makepkg -si
+depois de instalado, rode pacaur -Sy
+
+- montando sua swap
+verifique se o gnome-disks está instalado executando ele com o rofi
+caso não esteja, instale uma versão semelhante a ele com o yay gnome-disks
+abra o gnome-disks e veja se a partição que você separou para a swap está lá
+formate ela para swap
+agora edite o arquivo fstab com sudo mousepad /etc/fstab
+e coloque a seguinte linha:
+/dev/sda[número] [dois tabs] none [dois tabs] swap [dois tabs] sw [dois tabs] 0 [dois tabs] 0
+para finalizar, reinicie o sistema e use o free -h e o swapon --show para verificar sua swap
+
+- configurando o display manager lightdm
+instalando: sudo pacman -S lightdm-gtk-greeter-settings
+agora é só rodar e configurar (é necessário executar no terminal com sudo).
+
+- instalando eww
+instale o rust primeiro: curl https://sh.rustup.rs -sSf | sh
+vai perguntar se você quer instalar por cima do outro, responda sim.
+instale o nightly: rustup install nightly
+cd ~/git; git clone https://github.com/elkowar/eww
+cd eww
+cargo build --release
+cd target/release
+chmod +x ./eww
+pra rodar, rode ->
+ ./eww daemon
+./eww open <window_name>

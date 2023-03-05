@@ -2,7 +2,7 @@
 
 alias config='git --git-dir=/home/none/.cfg/ --work-tree=/home/none' # git dotfiles
 alias portas_abertas='netstat -atunp'
-alias descompactar='tar -xzf'
+alias ips='ip -c -br a'
 alias ver_tamanho='du -sh'
 alias tempo_de_inicializacao_dos_programas='systemd-analyze blame'
 alias git_parar_tracking="config rm --cached"
@@ -10,11 +10,55 @@ alias fucking='sudo'
 alias abrir='exo-open'
 alias variaveis='set'
 alias meu_ip="echo $(ifconfig | grep broadcast | awk '{print $2}')"
-alias meus_alias='cat ~/.bash_aliases'
-
+alias ver_alias='cat ~/.bash_aliases'
+alias editar_alias='nano ~/.bash_aliases'
+alias ver_processador='inxi -bGI'
+alias ver_processos='ps aux'
 
 # FUNÇÕES
 
 procurar(){
-find $1 -name $2
+find $2 -name $1
+}
+
+arquivos_ocultos(){
+find $1 -name '.*' -type f
+}
+
+pastas_ocultas(){
+find $1 -name '.*' -type d
+}
+
+pastas_vazias(){
+find $1 -type d -empty
+}
+
+arquivos_vazios(){
+find $1 -type f -empty
+}
+
+arquivos_executaveis(){
+find $1 -perm /a=x -type f
+}
+
+descompactar()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' não pode ser extraido via descompactar()" ;;
+    esac
+  else
+    echo "'$1' não é um arquivo válido"
+  fi
 }

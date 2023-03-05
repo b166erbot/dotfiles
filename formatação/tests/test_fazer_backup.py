@@ -112,32 +112,26 @@ class TestPassarRegex(TestCase):
 
 @patch('src.fazer_backup.print')
 class TestPegarCaminhos(TestCase):
-    side_eff = [
-        '~/Downloads/ - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste.py\'',
-        '/home/none/Downloads - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste\'',
-        '"/home/none/python scripts" - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste\'',
-        '~/Downloads/* - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste\'',
-        '~/Downloads/. - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste\'',
-        '\'/home/none/python scripts\' - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste\'',
-        '"~/python scripts/." - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste\'',
-        '~/Downloads/*',
-        '~/Downloads/*.*',
-        '~/Downloads',
-        '/home/none/*',
-        '/home/none/*.*',
-        '/home/none',
-        ''
-    ]
-    side_eff2 = [
-        'esta pasta não existe',
-        'nem esta',
-        '/home/none/não existe',
-        ''
-    ]
-
-    @patch('src.fazer_backup.input', side_effect = side_eff)
+    @patch('src.fazer_backup.input')
     @patch('src.fazer_backup.Path.exists', return_value = True)
-    def test_retornando_as_exatas_pastas_caso_elas_existam(self, *_):
+    def test_retornando_as_exatas_pastas_caso_elas_existam(self, print, input, exists):
+        side_eff = [
+            '~/Downloads/ - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste.py\'',
+            '/home/none/Downloads - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste\'',
+            '"/home/none/python scripts" - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste\'',
+            '~/Downloads/* - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste\'',
+            '~/Downloads/. - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste\'',
+            '\'/home/none/python scripts\' - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste\'',
+            '"~/python scripts/." - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste\'',
+            '~/Downloads/*',
+            '~/Downloads/*.*',
+            '~/Downloads',
+            '/home/none/*',
+            '/home/none/*.*',
+            '/home/none',
+            ''
+        ]
+        input.side_effect = side_eff
         esperado = [
             '~/Downloads/ - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste.py\'',
             '/home/none/Downloads - teste teste.py teste.mp3 "teste teste" "teste teste.mp3" \'teste teste\'',
@@ -156,9 +150,16 @@ class TestPegarCaminhos(TestCase):
         resultado = pegar_caminhos()
         self.assertEqual(resultado, esperado)
 
-    @patch('src.fazer_backup.input', side_effect = side_eff2)
+    @patch('src.fazer_backup.input')
     @patch('src.fazer_backup.Path.exists', return_value = False)
-    def test_nao_retornando_as_pastas_caso_elas_nao_existam(self, *_):
+    def test_nao_retornando_as_pastas_caso_elas_nao_existam(self, print, input, exists):
+        side_eff = [
+            'esta pasta não existe',
+            'nem esta',
+            '/home/none/não existe',
+            ''
+        ]
+        input.side_effect = side_eff
         esperado = []
         resultado = pegar_caminhos()
         self.assertEqual(resultado, esperado)

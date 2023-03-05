@@ -6,10 +6,9 @@ import re
 from itertools import chain
 from argparse import ArgumentParser
 
-
 try:
-    from .utils import corrigir_caminho, pegar_entrada
-except ImportError:
+    from src.utils import corrigir_caminho, pegar_entrada
+except ModuleNotFoundError:
     from utils import corrigir_caminho, pegar_entrada
 
 
@@ -152,17 +151,17 @@ def fazer_backup(argumentos):
     print('arquivos copiados com sucesso.')
 
 
-if __name__ == '__main__':
+def main():
     descricao = (
-        'programa que faz o backup das pastas selecionadas para '
-        'o pendrive'
+        'programa que faz o pre install de uma distro derivada de debian'
     )
     usagem = (
-        'python3 fazer_backup.py --usuario <usuário> --pendrive '
+        'python3 pre_install.py --usuario <usuário> --pendrive '
         '<local do pendrive> [--config-arquivo <carregar/novo>]'
     )
     parser = ArgumentParser(
-        usage = usagem, description = descricao
+        usage = usagem,
+        description = descricao
     )
     parser.add_argument(
         '--usuario', type=str, required = True,
@@ -175,7 +174,11 @@ if __name__ == '__main__':
     parser.add_argument(
         '--config-arquivo', type=str, required = False,
         default = 'novo', choices = ['novo', 'carregar'],
-        help = 'arquivo de configuração a ser carregado'
+        help = 'arquivo de configuração. opções: novo, carregar'
     )
     argumentos = parser.parse_args()
     fazer_backup(argumentos)
+
+
+if __name__ == '__main__':
+    main()

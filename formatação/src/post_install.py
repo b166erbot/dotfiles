@@ -2,12 +2,8 @@ from os import system as sy
 from os import getuid
 from pathlib import Path
 from os import chdir
-
-
-try:
-    from .restaurar_backup import restaurar_backup
-except ImportError:
-    from restaurar_backup import restaurar_backup
+from argparse import ArgumentParser
+from src.restaurar_backup import restaurar_backup
 
 
 def root() -> bool:
@@ -25,7 +21,6 @@ def verificar_root() -> None:
 
 
 def post_install(argumentos):
-    verificar_root()
     local = Path(__file__).parent
     chdir(local)
 
@@ -39,7 +34,8 @@ def post_install(argumentos):
         'zeal', 'usb-creator-gtk', 'arc-theme', 'gnome-disk-utility',
         'snapd', 'gnome-software-plugin-snap', 'transmission-gtk',
         'bash-completion', 'gnome-boxes', 'python3-pip', 'libreoffice',
-        'zsh', 'curl', 'nano', 'vlc', 'file-roller'
+        'zsh', 'curl', 'nano', 'vlc', 'file-roller', 'flameshot',
+        'diodon', 'unrar'
     ]
     # gnome-disk-utility ou gparted
     # poppler-utils -> pdf
@@ -104,7 +100,9 @@ def post_install(argumentos):
     chdir('/home/none')
 
     # instalando os dotfiles do meu repositório.
-    config_command = '/usr/bin/git --git-dir=/home/none/.cfg/ --work-tree=/home/none'
+    config_command = (
+        '/usr/bin/git --git-dir=/home/none/.cfg/ --work-tree=/home/none'
+    )
     sy('rm .bashrc .zshrc')
     sy('git clone --bare https://github.com/b166erbot/dotfiles /home/none/.cfg')
     sy(config_command + ' checkout')
@@ -154,4 +152,36 @@ def post_install(argumentos):
         'clonar o repositorio das notificações. ele está oculto, '
         'portanto vai precisar de senha'
     )
+    print('instalar os programas da função descompactar do aliases')
     # print('instalar o free-ofice e colocar a chave de ativação permanente nele')
+
+
+def main():
+    verificar_root()
+    descricao = (
+        'programa que faz o post install de uma distro derivada de debian'
+    )
+    usagem = (
+        'sudo python3 post_install.py --usuario <usuário> '
+        '--origem-pendrive <local do pendrive> '
+        '[--interface <interface>]'
+    )
+    parser = ArgumentParser(
+        usage = usagem,
+        description=descricao,
+    )
+    parser.add_argument(
+        '--interface', type = str, default = 'i3-wm',
+        choices = ['i3-wm', 'xfce4'], required = False,
+        help = 'instala uma interface de usuário para o sistema.'
+    )
+    parser.add_argument(
+        '--usuario', type=str, required = True,
+        help = 'nome do usuário logado na máquina no momento'
+    )
+    parser.add_argument(
+        '--origem-pendrive', type = str, required = True,
+        help = 'local do pendrive para fazer a restauração do backup'
+    )
+    argumentos = parser.parse_args()
+    post_install(argumentos)

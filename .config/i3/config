@@ -259,3 +259,7 @@ exec_always ~/notificacao/notificacao.sh
 
 # executando o flameshot
 exec_always flameshot
+
+
+# executando o diodon, um programa que arruma o a área de transferência no i3
+exec_always "bash -c 'if [ -z $(pidof diodon) ]; then diodon; fi'"

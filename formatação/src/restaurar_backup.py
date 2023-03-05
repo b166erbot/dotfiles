@@ -4,10 +4,9 @@ from pwd import getpwnam
 from os import walk
 from argparse import ArgumentParser
 
-
 try:
-    from .utils import pegar_entrada
-except ImportError:
+    from src.utils import pegar_entrada
+except ModuleNotFoundError:
     from utils import pegar_entrada
 
 
@@ -44,31 +43,27 @@ def restaurar_backup(argumentos):
     caminho = argumentos.pendrive / Path('backup')
     if not caminho.exists():
         print(
-            f'Erro: não existe o caminho {caminho}'
+            f'Erro: não existe o caminho {caminho} '
             'favor rodar o pre_install.py.'
         )
         exit(1)
+    usuario = argumentos.usuario
     for item in caminho.glob('*'):
         item_destino = pasta_home / item.relative_to(caminho)
         if item.is_file():
             copy(item, item_destino)
-            chown(item, )
         elif item.is_dir():
             copytree(
                 item, item_destino,
                 dirs_exist_ok=True
             )
-            mudar_dono(
-                caminhar(item_destino),
-                argumentos.usuario,
-                argumentos.usuario
-            )
+            mudar_dono(caminhar(item_destino), usuario, usuario)
+        chown(item_destino, usuario, usuario)
     rmtree(caminho)
     print('arquivos e pastas movidos com sucesso!')
 
 
-
-if __name__ == '__main__':
+def main():
     descricao = (
         'programa que faz o restaura o backup do pendrive para o computador'
     )
@@ -89,3 +84,7 @@ if __name__ == '__main__':
     )
     argumentos = parser.parse_args()
     restaurar_backup(argumentos)
+
+
+if __name__ == '__main__':
+    main()
