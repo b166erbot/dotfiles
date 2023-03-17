@@ -28,10 +28,9 @@ config ~/bem_vindo.py
 config ~/formatação/
 config ~/sites_interessantes.txt
 config ~/git/dicas_para_comandos_git.txt
-config ~/.config/ncmpcpp/config
-config ~/.config/mpd/mpd.conf
 config ~/.config/gtk-3.0/settings.ini
 config ~/.config/picom/picom.conf
 config ~/.config/rofi/config.rasi
 config ~/.arquivos
 config ~/.config/rofi/config.rasi
+config ~/.config/polybar/cuts
