@@ -29,10 +29,10 @@ ZSH_THEME="af-magic"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=30
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -44,7 +44,7 @@ ZSH_THEME="af-magic"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
@@ -72,7 +72,7 @@ ZSH_THEME="af-magic"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(aliases)
 
 # User configuration
 
@@ -111,6 +111,11 @@ source ~/meu_token.sh
 # source ~/anaconda3/etc/profile.d/conda.sh
 # Comunicado: eu movi os aliases para o arquivo .bash_aliases
 source ~/.bash_aliases
+
+# COMPLETAÇÃO AUTOMATICA PARA SCRIPTS MEUS.
+# por padrão você precisa criar para todos os scripts com o click uma
+# variável assim: _(NOME_DO_SCRIPT)_COMPLETE
+eval "$(_SCRIPTS_COMPLETE=zsh_source scripts)"
 
 
 # colocando a cor do terminal com pywal

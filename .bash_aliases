@@ -10,10 +10,14 @@ alias fucking='sudo'
 alias abrir='exo-open'
 alias variaveis='set'
 alias meu_ip="echo $(ifconfig | grep broadcast | awk '{print $2}')"
-alias ver_alias='cat ~/.bash_aliases'
 alias editar_alias='nano ~/.bash_aliases'
 alias ver_processador='inxi -bGI'
 alias ver_processos='ps aux'
+alias help='run-help'
+alias montar_e_transferir_musicas='python3 ~/python\ scripts/scripts/montar_celular_e_transferir_musicas.py'
+alias contar_arquivos_pastas='echo "$(ls -a | wc -l) - 2" | bc'
+alias ver_atalhos='scripts ver-atalhos'
+alias ver_alias='acs'
 
 # FUNÇÕES
 

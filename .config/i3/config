@@ -248,7 +248,8 @@ exec_always wal -R
 exec_always picom -f
 # exec_always --no-startup-id compton -b
 
-# colocar o wallpaper com o nitrogen
+# colocar o wallpaper
+# exec_always feh --bg-scale ~/Imagens/wallpapers/variados/wallhaven-1p3ymg_1600x900.png
 exec_always nitrogen --restore
 
 # executar o polybar

@@ -141,4 +141,3 @@ export PYTHONSTARTUP=/home/none/.pythonrc
 
 # sources
 source ~/meu_token.sh
-# . "$HOME/.cargo/env"

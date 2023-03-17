@@ -35,7 +35,7 @@ def post_install(argumentos):
         'snapd', 'gnome-software-plugin-snap', 'transmission-gtk',
         'bash-completion', 'gnome-boxes', 'python3-pip', 'libreoffice',
         'zsh', 'curl', 'nano', 'vlc', 'file-roller', 'flameshot',
-        'diodon', 'unrar'
+        'diodon', 'unrar', 'curlftpfs'
     ]
     # gnome-disk-utility ou gparted
     # poppler-utils -> pdf
@@ -114,8 +114,7 @@ def post_install(argumentos):
 
 
     # meus scripts
-    # sy(f"python3 {local}/../scripts/setup.py install")
-    # print(f"python3 {local}/../scripts/setup.py install")
+    sy(f"python3 ~/python\ scripts/scripts/setup.py install")
 
     chdir(local)
     
