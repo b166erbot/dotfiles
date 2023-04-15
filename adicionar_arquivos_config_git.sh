@@ -25,7 +25,6 @@ config ~/.pythonrc
 config ~/.zshrc
 config ~/adicionar_arquivos_config_git.sh
 config ~/bem_vindo.py
-config ~/formatação/
 config ~/sites_interessantes.txt
 config ~/git/dicas_para_comandos_git.txt
 config ~/.config/gtk-3.0/settings.ini
