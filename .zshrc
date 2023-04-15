@@ -72,7 +72,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aliases)
+# plugins=(aliases)
 
 # User configuration
 
@@ -101,7 +101,7 @@ plugins=(aliases)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # path
-export PATH=$PATH:$HOME/.local/bin:/home/none/anaconda3/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/anaconda3/bin:/usr/local/bin
 
 # sources
 source $ZSH/oh-my-zsh.sh

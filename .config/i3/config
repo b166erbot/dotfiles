@@ -90,11 +90,11 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
+# toggle tiling / floating2
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
@@ -189,21 +189,24 @@ bindsym $mod+r mode "resize"
 # bindsym Print exec xfce4-screenshooter -fc # não funciona.
 # bindsym Print exec xfce4-screenshooter -f
 # bindsym Shift+Print exec xfce4-screenshooter -r
-bindsym Print exec flameshot gui
 # bindsym Ctrl+Shift+Print exec xfce4-screenshooter -w
+bindsym Print exec flameshot gui
 # bindsym Ctrl+Shift+Esc exec xfce4-taskmanager # não funciona
 
 # atalho para abrir uma janela com um tamanho fixo.
+
 # bindsym $mod+x [floating] resize set 900 500
 # agora, onde coloca o programa na linha acima, eu não sei
 
+
 # aplicativos abrindo com janela flutuante.
-# for_window [class="Thunar"] floating enable
+for_window [class="Thunar"] floating enable resize set 750 500
 # for_window [class="Parole"] floating enable resize set 200 200
 # for_window [class="Video-downloader"] floating enable
 # for_window [class="terminal"] floating enable
 # for_window [class="Simple-scan"] floating enable
 for_window [class="Ristretto"] floating enable resize set 900 500
+for_window [class="Todo List"] floating enable
 
 
 #### minhas cores
@@ -242,9 +245,6 @@ gaps outer 15
 
 # restaurando a cor do terminal com pywal
 exec_always wal -R
-
-# executando o mpd para o ncmpcpp rodar
-# exec_always --no-startup-id mpd
 
 # compositores
 # executando o picom ou compton

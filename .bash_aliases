@@ -17,7 +17,8 @@ alias help='run-help'
 alias montar_e_transferir_musicas='python3 ~/python\ scripts/scripts/montar_celular_e_transferir_musicas.py'
 alias contar_arquivos_pastas='echo "$(ls -a | wc -l) - 2" | bc'
 alias ver_atalhos='scripts ver-atalhos'
-alias ver_alias='acs'
+alias git_ver_rastreados='config ls-tree -r master --name-only'
+alias montar_celular='python3 ~/python\ scripts/scripts/_montar_celular.py'
 
 # FUNÇÕES
 
@@ -60,6 +61,7 @@ descompactar()
       *.zip)       unzip $1     ;;
       *.Z)         uncompress $1;;
       *.7z)        7z x $1      ;;
+      *.tar.xz)    tar -xf $1   ;;
       *)           echo "'$1' não pode ser extraido via descompactar()" ;;
     esac
   else

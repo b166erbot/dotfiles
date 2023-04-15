@@ -3,6 +3,7 @@ from os import getuid
 from pathlib import Path
 from os import chdir
 from argparse import ArgumentParser
+import json
 from src.restaurar_backup import restaurar_backup
 
 
@@ -17,38 +18,45 @@ def verificar_root() -> None:
             'execute este script como root:'
             ' sudo `which python3` post_install.py'
         )
-        exit(1)
+        exit()
 
 
 def post_install(argumentos):
-    local = Path(__file__).parent
+    local = Path(__file__).parent.parent
     chdir(local)
 
+    if Path('sistemas.json').exists():
+            with open('sistemas.json') as configfile:
+                config = json.load(configfile)
+    else:
+        print(
+            'arquivo configuracoes.json não existe. por favor '
+            'execute o pre_install para poder criar um novo'
+        )
+        exit()
+
     # atualizando cache
-    sy('apt update')
+    sy(config[argumentos.sistema]['comando_atualizar'])
 
     # instalando programas
-    programas = [
-        'glade', 'gimp', 'pycodestyle', 'git', 'poppler-utils',
-        'bpython', 'net-tools', 'simplescreenrecorder', 'papirus-icon-theme',
-        'zeal', 'usb-creator-gtk', 'arc-theme', 'gnome-disk-utility',
-        'snapd', 'gnome-software-plugin-snap', 'transmission-gtk',
-        'bash-completion', 'gnome-boxes', 'python3-pip', 'libreoffice',
-        'zsh', 'curl', 'nano', 'vlc', 'file-roller', 'flameshot',
-        'diodon', 'unrar', 'curlftpfs'
-    ]
     # gnome-disk-utility ou gparted
     # poppler-utils -> pdf
     # gnome-software, loja de programas
     # file-roller para arquivos zip modo gráfico
     # o curl é preciso baixar pois ele será executado ali em baixo
-    sy('apt install -y ' + ' '.join(programas))
+    # remover esses comentários acima e colocar em um arquivo de texto?
+    sy(
+        (
+            config[argumentos.sistema]['comando_install']
+            + ' '.join(config[argumentos.sistema]['programas'])
+        )
+    )
     sy('snap install video-downloader')
     # woeusb (pendrive bootavel para windows no linux EXCENCIAL)
     # ventoy (pendrive bootabel para qualquer coisa)
 
     # minhas ferramentas do python
-    sy('pip3 install pipenv poetry colored pywal')
+    sy('pip install pipenv poetry colored pywal')
     # radon isort coverage pep257 pycodestyle
 
     chdir(local)
@@ -66,42 +74,52 @@ def post_install(argumentos):
     )
 
     # linkando coisas
-    sy('ln -s /usr/bin/bpython3 /usr/bin/bpython')
+    sy(
+        f"ln -s {config[argumentos.sistema]['pasta-bin']}/bpython3 "
+        f"{config[argumentos.sistema]['pasta-bin']}/bpython"
+    )
 
     # atualizando o sistema
-    sy('apt full-upgrade -y')
+    # sy('apt full-upgrade -y')
 
     # removendo programas e dependências desnecessárias
-    sy('apt autoremove -y vim rhythmbox')
+    if argumentos.sistema == 'debian':
+        sy('apt autoremove -y vim rhythmbox')
     # remover gnome-keyring se ele começar a dar problemas.
 
     # limpando o sistema caso seja necessário
-    sy('apt autoremove -y')
+    sy(config[argumentos.sistema]['comando_autoremove'])
 
     # instalando a interface de usuário
-    if argumentos.interface == 'i3-wm':
-        programas = [
-            'i3-wm', 'rofi', 'nitrogen', 'picom',
-            'lynx', 'lxappearance', 'polybar'
-        ]
+    instalar_polybarthemes = False
+    programas = [
+        'rofi', 'nitrogen', 'picom', 'lxappearance', 'polybar'
+    ]
+    if argumentos.interface == 'i3':
+        programas.append('i3')
+        #instalar_polybarthemes = True
         # [ncmpcpp mpd mpc]
+    elif argumentos.interface == 'bspwm':
+        programas.append('bspwm')
+        #instalar_polybarthemes = True
     elif argumentos.interface == 'xfce4':
         programas = ['xfce4', 'xfce4-goodies']
-    sy('apt install -y ' + ' '.join(programas))
+    sy(config[argumentos.sistema]['comando_install'] + ' '.join(programas))
 
-    chdir('/tmp')
+    #chdir('/tmp')
 
     # instalando temas para polybar
-    sy('git clone --depth=1 https://github.com/adi1090x/polybar-themes.git')
-    chdir('/tmp/polybar-themes')
-    sy('chmod +x setup.sh')
-    sy('./setup.sh')
+    #if instalar_polybarthemes:
+    #    sy('git clone --depth=1 https://github.com/adi1090x/polybar-themes.git')
+    #    chdir('/tmp/polybar-themes')
+    #    sy('chmod +x setup.sh')
+    #    sy('./setup.sh')
 
-    chdir('/home/none')
+    chdir('/home/' + argumentos.usuario)
 
     # instalando os dotfiles do meu repositório.
     config_command = (
-        '/usr/bin/git --git-dir=/home/none/.cfg/ --work-tree=/home/none'
+        'git --git-dir=/home/none/.cfg/ --work-tree=/home/none'
     )
     sy('rm .bashrc .zshrc')
     sy('git clone --bare https://github.com/b166erbot/dotfiles /home/none/.cfg')
@@ -110,11 +128,7 @@ def post_install(argumentos):
     sy(config_command + ' config --local status.showUntrackedFiles no')
 
     # linkando o .bash_aliases para o root
-    sy('ln -s .bash_aliases /root')
-
-
-    # meus scripts
-    sy(f"python3 ~/python\ scripts/scripts/setup.py install")
+    # sy('ln -s .bash_aliases /root')
 
     chdir(local)
     
@@ -124,13 +138,18 @@ def post_install(argumentos):
     # run('su none -c ./restaurar_backup.py'.split())
     restaurar_backup(argumentos)
 
+    # meus scripts
+    sy("python3 ~/python\ scripts/scripts/setup.py install")
+    
+
+    # finalizando.
     print('\n' * 3)
     print('baixar o google chrome.deb, visual_studio_code.deb')
     # print('importar os dots. para importar vá no google e pesquise nos favoritos por dot')
-    print(
-        'instalar manualmente o i3-gaps. pesquise nos favoritos por'
-        ' i3-gaps no google que você acha.'
-    )
+    #print(
+    #    'instalar manualmente o i3-gaps. pesquise nos favoritos por'
+    #    ' i3-gaps no google que você acha.'
+    #)
     print(
         'criar um arquivo chamado meu_token.sh '
         'e colocar o token do pendrive nele.'
@@ -163,6 +182,7 @@ def main():
     usagem = (
         'sudo python3 post_install.py --usuario <usuário> '
         '--origem-pendrive <local do pendrive> '
+        '--sistema <nome do sistema operacioanl rodando no momento> '
         '[--interface <interface>]'
     )
     parser = ArgumentParser(
@@ -170,8 +190,8 @@ def main():
         description=descricao,
     )
     parser.add_argument(
-        '--interface', type = str, default = 'i3-wm',
-        choices = ['i3-wm', 'xfce4'], required = False,
+        '--interface', type = str, default = 'i3',
+        choices = ['i3', 'xfce4', 'bspwm'], required = False,
         help = 'instala uma interface de usuário para o sistema.'
     )
     parser.add_argument(
@@ -182,5 +202,14 @@ def main():
         '--origem-pendrive', type = str, required = True,
         help = 'local do pendrive para fazer a restauração do backup'
     )
+    parser.add_argument(
+        '--sistema', type = str, required = True,
+        choices = ['debian', 'arch-linux'],
+        help = 'sistema operacional que está rodando no momento.'
+    )
     argumentos = parser.parse_args()
     post_install(argumentos)
+
+
+
+# observação: todo "sy" que for adicionado precisa alterar um punhado de testes.

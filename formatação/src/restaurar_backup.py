@@ -65,7 +65,7 @@ def restaurar_backup(argumentos):
 
 def main():
     descricao = (
-        'programa que faz o restaura o backup do pendrive para o computador'
+        'programa que restaura o backup do pendrive para o computador'
     )
     usagem = (
         'python3 restaurar_backup.py --usuario <usuário> '
