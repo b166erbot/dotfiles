@@ -2,3 +2,4 @@ notificação
 python\ scripts/todo_list
 python\ scripts/scripts
 meus dots
+formatacao

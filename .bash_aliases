@@ -19,19 +19,22 @@ alias contar_arquivos_pastas='echo "$(ls -a | wc -l) - 2" | bc'
 alias ver_atalhos='scripts ver-atalhos'
 alias git_ver_rastreados='config ls-tree -r master --name-only'
 alias montar_celular='python3 ~/python\ scripts/scripts/_montar_celular.py'
+alias substituir='mv -f'
+alias versao_sistema='lsb_release -a'
+alias chat='shell-genie ask'
 
 # FUNÇÕES
 
 procurar(){
-find $2 -name $1
+find $2 -iname $1
 }
 
 arquivos_ocultos(){
-find $1 -name '.*' -type f
+find $1 -iname '.*' -type f
 }
 
 pastas_ocultas(){
-find $1 -name '.*' -type d
+find $1 -iname '.*' -type d
 }
 
 pastas_vazias(){
@@ -68,3 +71,20 @@ descompactar()
     echo "'$1' não é um arquivo válido"
   fi
 }
+
+baixar_musica(){
+yt-dlp -f 'ba' -x --audio-format mp3 --embed-thumbnail "$1" -o '%(title)s.mp3'
+}
+
+historico_programas_desinstalados(){
+tail -n $1 /var/log/apt/history.log
+}
+
+
+
+# IMPORTAR CONFIGURAÇÕES EXCLUSIVAS DE CADA SISTEMA
+if [ -f /etc/arch-release ]; then
+  source ~/.bash_aliases_arch
+elif [ -f /etc/debian_version ]; then
+  source ~/.bash_aliases_debian
+fi

@@ -12,7 +12,7 @@ function config {
 }
 
 
-config ~/.bash_aliases
+config ~/.bash_aliases*
 config ~/.bashrc
 config ~/.config/Thunar/accels.scm
 config ~/.config/Thunar/uca.xml
@@ -26,7 +26,7 @@ config ~/.zshrc
 config ~/adicionar_arquivos_config_git.sh
 config ~/bem_vindo.py
 config ~/sites_interessantes.txt
-config ~/git/dicas_para_comandos_git.txt
+config ~/git/.dicas_git
 config ~/.config/gtk-3.0/settings.ini
 config ~/.config/picom/picom.conf
 config ~/.config/rofi/config.rasi
