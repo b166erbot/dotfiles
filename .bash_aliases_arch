@@ -1,1 +1,12 @@
+# ALIASES
+
 alias de_qual_pacote_e='pacman -Qo'
+alias versao_sistema='cat /etc/os-release /etc/lsb-release'
+
+
+# FUNÇÕES
+
+mostrar_binarios(){
+pacman -Ql <pacote> | grep -E "/bin/|/sbin/|/usr/bin/|/usr/sbin/" | cut -d' ' -f2
+}
+

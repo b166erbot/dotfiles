@@ -1,1 +1,11 @@
+# ALIASES
+
 alias de_qual_pacote_e='dpkg -S'
+alias versao_sistema='lsb_release -a'
+
+
+# FUNÇÕES
+
+mostrar_binarios(){
+dpkg -L $1 | grep -E "/bin/|/sbin/|/usr/bin/|/usr/sbin/" | cut -d' ' -f1
+}

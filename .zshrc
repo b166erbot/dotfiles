@@ -128,4 +128,5 @@ else
     echo rode o comando wal -i /local/da/imagem.jpg
 fi
 
-python3 ~/bem_vindo.py
+# instale o colored no poetry da pasta teste.
+poetry --directory ~/python\ scripts/teste run python3 ~/bem_vindo.py

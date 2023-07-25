@@ -1,16 +1,18 @@
 # ALIASES
 
 alias config='git --git-dir=/home/none/.cfg/ --work-tree=/home/none' # git dotfiles
-alias portas_abertas='netstat -atunp'
+alias portas_abertas='ss -atunpl'
 alias ips='ip -c -br a'
 alias ver_tamanho='du -sh'
 alias tempo_de_inicializacao_dos_programas='systemd-analyze blame'
-alias git_parar_tracking="config rm --cached"
+alias git_parar_tracking='config rm --cached'
 alias fucking='sudo'
 alias abrir='exo-open'
 alias variaveis='set'
-alias meu_ip="echo $(ifconfig | grep broadcast | awk '{print $2}')"
+alias meu_ip='ip route get 1 | awk "{print \$7}"'
 alias editar_alias='nano ~/.bash_aliases'
+alias editar_alias_debian='nano ~/.bash_aliases_debian'
+alias editar_alias_arch='nano ~/.bash_aliases_arch'
 alias ver_processador='inxi -bGI'
 alias ver_processos='ps aux'
 alias help='run-help'
@@ -18,10 +20,14 @@ alias montar_e_transferir_musicas='python3 ~/python\ scripts/scripts/montar_celu
 alias contar_arquivos_pastas='echo "$(ls -a | wc -l) - 2" | bc'
 alias ver_atalhos='scripts ver-atalhos'
 alias git_ver_rastreados='config ls-tree -r master --name-only'
-alias montar_celular='python3 ~/python\ scripts/scripts/_montar_celular.py'
+alias montar_celular='python3 ~/python\ scripts/scripts/_montar_celular.py --ip 3'
 alias substituir='mv -f'
-alias versao_sistema='lsb_release -a'
 alias chat='shell-genie ask'
+alias mover_e_alterar_dono='fucking `which scripts` mover-e-alterar-dono'
+alias ver_arquitetura_pro='uname -m'
+alias atualizar_alias='source ~/.bash_aliases'
+alias remover_exif='mogrify -strip'
+alias trocar_usuario='dm-tool switch-to-greeter'
 
 # FUNÇÕES
 
@@ -80,6 +86,9 @@ historico_programas_desinstalados(){
 tail -n $1 /var/log/apt/history.log
 }
 
+remover_recursivamente(){
+    find "$2" -name "$1" -exec rm -rf {} \; 2>/dev/null
+}
 
 
 # IMPORTAR CONFIGURAÇÕES EXCLUSIVAS DE CADA SISTEMA
