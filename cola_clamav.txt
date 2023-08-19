@@ -1,0 +1,3 @@
+"fucking freshclam" - atualizar o banco de dados
+"fucking clamscan --recursive=yes /" - scaneia o computador por ameaças
+configurar o alias do clamav (escanear_pc) para ignorar o máximo de pastas inúteis possível.

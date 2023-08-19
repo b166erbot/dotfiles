@@ -37,3 +37,4 @@ config ~/.config/nitrogen
 config ~/.config/bspwm
 config ~/.config/sxhkd
 config ~/meus_programas_do_github.txt
+config ~/cola_clamav.txt

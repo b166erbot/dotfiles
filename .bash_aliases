@@ -25,9 +25,11 @@ alias substituir='mv -f'
 alias chat='shell-genie ask'
 alias mover_e_alterar_dono='fucking `which scripts` mover-e-alterar-dono'
 alias ver_arquitetura_pro='uname -m'
-alias atualizar_alias='source ~/.bash_aliases'
+alias atualizar_shell='source ~/.zshrc'
 alias remover_exif='mogrify -strip'
 alias trocar_usuario='dm-tool switch-to-greeter'
+alias configuracoes_xfce4='xfce4-settings-manager'
+alias escanear_pc='fucking clamscan --recursive=yes --infected --exclude-dir="/(usr/share|proc|sys|dev|run|tmp|var/tmp|mnt|media)|/home/none/(\.cache|\.mozilla)|/home/ivone/(\.cache|\.mozilla)"  /'
 
 # FUNÇÕES
 
@@ -89,6 +91,18 @@ tail -n $1 /var/log/apt/history.log
 remover_recursivamente(){
     find "$2" -name "$1" -exec rm -rf {} \; 2>/dev/null
 }
+
+resetar_pywal() {
+    if [ -e ~/.cache/wal/sequences ]
+    then
+        (cat ~/.cache/wal/sequences &);
+        source ~/.cache/wal/colors-tty.sh
+    else
+        echo "Rode o comando wal -i /local/da/imagem.jpg"
+    fi
+}
+
+# function dominio_comprado { whois "$1" 2>/dev/null | grep -q 'Registrant' && echo "comprado." || echo "disponível." }
 
 
 # IMPORTAR CONFIGURAÇÕES EXCLUSIVAS DE CADA SISTEMA
