@@ -79,6 +79,8 @@ case $chosen in
     $logout)
 		ans=$(confirm_exit &)
 		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
+			notify-send --urgency=critical 'deslogando da vpn.'
+			python3 ~/ferramentas_usuario/desconectar_vpn.py --finalizacao
 			if [[ "$DESKTOP_SESSION" == "Openbox" ]]; then
 				openbox --exit
 			elif [[ "$DESKTOP_SESSION" == "bspwm" ]]; then

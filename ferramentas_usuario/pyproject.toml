@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "ferramentas-usuario"
+version = "0.1.0"
+description = ""
+authors = ["b166erobot <bernard0freitas@outlook.com>"]
+readme = "README.md"
+packages = [{include = "ferramentas_usuario"}]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+pyinstaller = "^6.0.0"
+pygobject = "^3.46.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

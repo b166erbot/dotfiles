@@ -30,6 +30,16 @@ alias remover_exif='mogrify -strip'
 alias trocar_usuario='dm-tool switch-to-greeter'
 alias configuracoes_xfce4='xfce4-settings-manager'
 alias escanear_pc='fucking clamscan --recursive=yes --infected --exclude-dir="/(usr/share|proc|sys|dev|run|tmp|var/tmp|mnt|media)|/home/none/(\.cache|\.mozilla)|/home/ivone/(\.cache|\.mozilla)"  /'
+alias ultimo_container='python3 ~/ferramentas_usuario/nome_ultimo_container.py'
+alias rodar_imagem_docker='fucking docker run -it'
+alias listar_todos_os_containers_dockers='fucking docker ps -a'
+alias remover_todos_os_containers_parados='fucking docker container prune -f'
+alias rodar_ultimo_container_ativo='fucking docker exec -it `ultimo_container` bash'
+alias parar_ultimo_container='fucking docker stop `ultimo_container`'
+alias remover_ultimo_container='fucking docker remove `ultimo_container`'
+alias ativar_e_rodar_ultimo_container='ativar_e_rodar_container `ultimo_container` bash'
+alias conectar_vpn='python3 ~/ferramentas_usuario/conectar_vpn.py'
+alias desconectar_vpn='python3 ~/ferramentas_usuario/desconectar_vpn.py'
 
 # FUNÇÕES
 
@@ -100,6 +110,15 @@ resetar_pywal() {
     else
         echo "Rode o comando wal -i /local/da/imagem.jpg"
     fi
+}
+
+criar_imagem_docker() {
+    fucking docker build -t $1 . -f $2
+}
+
+ativar_e_rodar_container() {
+    fucking docker start $1
+    fucking docker exec -it $1 $2
 }
 
 # function dominio_comprado { whois "$1" 2>/dev/null | grep -q 'Registrant' && echo "comprado." || echo "disponível." }

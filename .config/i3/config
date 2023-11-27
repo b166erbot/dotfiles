@@ -51,6 +51,7 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec xfce4-appfinder
 bindsym $mod+d exec rofi -modi drun -show drun -show-icons
+bindsym $mod+apostrophe exec rofi -modi run -show run -show-icons
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -267,3 +268,6 @@ exec_always flameshot
 
 # executando o diodon, um programa que arruma o a área de transferência no i3
 exec_always "bash -c 'if [ -z $(pidof diodon) ]; then diodon; fi'"
+
+# executando o ativador da vpn
+exec_always python3 ~/ferramentas_usuario/conectar_vpn.py -i

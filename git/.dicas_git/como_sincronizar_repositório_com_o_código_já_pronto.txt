@@ -1,9 +1,19 @@
+[sem um repositório local com git init]
 git init
-git pull https://github.com/b166erbot/formatacao main
 git branch -M main
+git pull https://github.com/b166erbot/formatacao main
 git add . # adicione alguma coisa
 git commit -m 'primeiro commit'
-echo $meu_token
 git remote add origin https://github.com/b166erbot/formatacao.git
-git push origin
+echo $meu_token
+git push --set-upstream origin main
+
+
+[com um repositório local]
+(espero que você tenha feito o último commit antes de continuar)
+git branch -M main
+git config pull.rebase true
+git pull https://github.com/b166erbot/formatacao.git main
+git remote add origin https://github.com/b166erbot/formatacao.git
+echo $meu_token
 git push --set-upstream origin main
