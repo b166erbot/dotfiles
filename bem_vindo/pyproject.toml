@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "bem-vindo"
+version = "0.1.0"
+description = ""
+authors = ["b166erobot <bernard0freitas@outlook.com>"]
+readme = "README.md"
+packages = [{include = "bem_vindo"}]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+colored = "^2.2.3"
+
+
+[tool.poetry.group.dev.dependencies]
+pyinstaller = "^5.13.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

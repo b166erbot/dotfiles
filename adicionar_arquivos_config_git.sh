@@ -24,7 +24,6 @@ config ~/.pdbrc
 config ~/.pythonrc
 config ~/.zshrc
 config ~/adicionar_arquivos_config_git.sh
-config ~/bem_vindo.py
 config ~/sites_interessantes.txt
 config ~/git/.dicas_git
 config ~/.config/gtk-3.0/settings.ini
@@ -39,3 +38,4 @@ config ~/.config/sxhkd
 config ~/meus_programas_do_github.txt
 config ~/cola_clamav.txt
 config ~/ferramentas_usuario
+config ~/bem_vindo
