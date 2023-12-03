@@ -5,7 +5,7 @@ alias portas_abertas='ss -atunpl'
 alias ips='ip -c -br a'
 alias ver_tamanho='du -sh'
 alias tempo_de_inicializacao_dos_programas='systemd-analyze blame'
-alias git_parar_tracking='config rm --cached'
+alias git_parar_tracking='config rm --cached -r'
 alias fucking='sudo'
 alias abrir='exo-open'
 alias variaveis='set'
@@ -40,6 +40,7 @@ alias remover_ultimo_container='fucking docker remove `ultimo_container`'
 alias ativar_e_rodar_ultimo_container='ativar_e_rodar_container `ultimo_container` bash'
 alias conectar_vpn='python3 ~/ferramentas_usuario/conectar_vpn.py'
 alias desconectar_vpn='python3 ~/ferramentas_usuario/desconectar_vpn.py'
+alias baixar_pasta_via_http='wget -r -np -nH --cut-dirs=3 -R index.html'
 
 # FUNÇÕES
 

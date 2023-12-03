@@ -42,7 +42,7 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -201,7 +201,7 @@ bindsym Print exec flameshot gui
 
 
 # aplicativos abrindo com janela flutuante.
-for_window [class="Thunar"] floating enable resize set 750 500
+for_window [class="Thunar"] floating enable resize set 770 500
 # for_window [class="Parole"] floating enable resize set 200 200
 # for_window [class="Video-downloader"] floating enable
 # for_window [class="terminal"] floating enable
@@ -243,7 +243,6 @@ for_window [class="^.*"] border pixel 2
 gaps inner 10
 gaps outer 15
 
-
 # restaurando a cor do terminal com pywal
 exec_always wal -R
 
@@ -266,8 +265,11 @@ exec_always ~/notificacao/notificacao.sh
 # executando o flameshot
 exec_always flameshot
 
-# executando o diodon, um programa que arruma o a área de transferência no i3
-exec_always "bash -c 'if [ -z $(pidof diodon) ]; then diodon; fi'"
+# executando o clipman, um programa que arruma o a área de transferência no i3
+exec_always "bash -c 'if [ -z $(pidof xfce4-clipman) ]; then xfce4-clipman; fi'"
+
+# executando o applet de rede
+# exec_always nm-applet
 
 # executando o ativador da vpn
-exec_always python3 ~/ferramentas_usuario/conectar_vpn.py -i
+# exec_always python3 ~/ferramentas_usuario/conectar_vpn.py -i

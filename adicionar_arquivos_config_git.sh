@@ -31,7 +31,7 @@ config ~/.config/picom/picom.conf
 config ~/.config/rofi/config.rasi
 config ~/.arquivos
 config ~/.config/rofi/config.rasi
-config ~/.config/polybar/cuts
+config ~/.config/polybar
 config ~/.config/nitrogen
 config ~/.config/bspwm
 config ~/.config/sxhkd

@@ -105,7 +105,10 @@ export PATH=$PATH:$HOME/.local/bin:$HOME/anaconda3/bin:/usr/local/bin
 
 # sources
 source $ZSH/oh-my-zsh.sh
-source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# instale o zsh-syntax-highlighting pelo gerenciador de pacotes do seu sistema.
+# caso não rode o comando abaixo, acesse o repositório online para ver o caminho
+# ou descubra por si só.
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/meu_token.sh
 # colocando o comando conda no zsh
 # source ~/anaconda3/etc/profile.d/conda.sh
