@@ -109,7 +109,7 @@ source $ZSH/oh-my-zsh.sh
 # caso não rode o comando abaixo, acesse o repositório online para ver o caminho
 # ou descubra por si só.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/meu_token.sh
+#source ~/meu_token.sh
 # colocando o comando conda no zsh
 # source ~/anaconda3/etc/profile.d/conda.sh
 # Comunicado: eu movi os aliases para o arquivo .bash_aliases
@@ -136,7 +136,7 @@ else
   echo rode o comando wal -i /local/da/imagem.jpg
 fi
 
-bem_vindo
+#bem_vindo
 
 # só use esses comandos abaixo caso tu use uma função com nome diferente
 # do padrão (preexec)
