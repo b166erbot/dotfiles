@@ -255,8 +255,8 @@ exec_always picom -f --no-use-damage
 # exec_always --no-startup-id compton -b
 
 # colocando o wallpaper
-# exec_always feh --bg-scale ~/Imagens/wallpapers/variados/wallhaven-1p3ymg_1600x900.png
-exec_always nitrogen --restore
+exec_always feh --bg-scale ~/Pictures/wallhaven-1p3ymg_1600x900.png
+# exec_always nitrogen --restore
 
 # executando o polybar
 # exec_always ~/.config/polybar/launch.sh --cuts

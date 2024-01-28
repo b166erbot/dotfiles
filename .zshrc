@@ -72,7 +72,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# plugins=()
+plugins=(timer git colored-man-pages catimg emoji)
 
 # User configuration
 
@@ -137,50 +137,3 @@ else
 fi
 
 #bem_vindo
-
-# só use esses comandos abaixo caso tu use uma função com nome diferente
-# do padrão (preexec)
-# autoload -Uz add-zsh-hook
-# add-zsh-hook preexec chupa_mundo
-
-# Função chamada antes de adicionar o comando ao histórico
-# zshaddhistory() {
-#     # Obtém o comando atual que será executado
-#     local comando="${1}"
-
-#     # Execute o comando2 antes do comando digitado
-#     executar_antes "$comando"
-
-#     # Adicione o comando ao histórico
-#     emulate -L zsh
-#     fc -p "$comando"
-
-#     # Execute o comando3 após a execução do comando
-#     # comando3 "$comando"
-# }
-
-# Variável global para armazenar o tempo de início de cada comando
-typeset -g _tempo_inicial_comandos
-
-# Função que será executada antes de cada comando
-preexec() {
-    # Registra o tempo de início do comando
-    _tempo_inicial_comandos=$(date +%s.%N)
-}
-
-# Função que será executada após a execução de cada comando
-precmd() {
-    if [[ -n "$_tempo_inicial_comandos" ]]; then
-        # Calcula o tempo de execução do comando
-        local _tempo_final_comandos=$(date +%s.%N)
-        local _tempo_final=$(
-          echo "$_tempo_final_comandos - $_tempo_inicial_comandos" | bc
-        )
-
-        # Exibe o tempo de execução na tela
-        echo "Tempo de execução: ${_tempo_final} segundos"
-
-        # Limpa o tempo de início para o próximo comando
-        _tempo_inicial_comandos=""
-    fi
-}

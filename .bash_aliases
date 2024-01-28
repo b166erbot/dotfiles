@@ -41,6 +41,8 @@ alias ativar_e_rodar_ultimo_container='ativar_e_rodar_container `ultimo_containe
 alias conectar_vpn='python3 ~/ferramentas_usuario/conectar_vpn.py'
 alias desconectar_vpn='python3 ~/ferramentas_usuario/desconectar_vpn.py'
 alias baixar_pasta_via_http='wget -r -np -nH --cut-dirs=3 -R index.html'
+alias converter_imagem='convert -resize 200x200 -quality 72'
+alias tarball_sem_compressao='tar -cvf'
 
 # FUNÇÕES
 
@@ -120,6 +122,10 @@ criar_imagem_docker() {
 ativar_e_rodar_container() {
     fucking docker start $1
     fucking docker exec -it $1 $2
+}
+
+remover_dados_exif() {
+  convert $1 -strip $2
 }
 
 # function dominio_comprado { whois "$1" 2>/dev/null | grep -q 'Registrant' && echo "comprado." || echo "disponível." }
