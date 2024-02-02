@@ -105,7 +105,7 @@ remover_recursivamente(){
     find "$2" -name "$1" -exec rm -rf {} \; 2>/dev/null
 }
 
-resetar_pywal() {
+atualizar_pywal() {
     if [ -e ~/.cache/wal/sequences ]
     then
         (cat ~/.cache/wal/sequences &);
@@ -126,6 +126,24 @@ ativar_e_rodar_container() {
 
 remover_dados_exif() {
   convert $1 -strip $2
+}
+
+trocar_nomes() {
+    if [ $# -ne 2 ]; then
+        echo "Uso: trocar_nomes item1 item2"
+        return 1
+    fi
+
+    item1="$1"
+    item2="$2"
+
+    # Criando um nome temporário para evitar conflitos
+    temp_nome="temp_$RANDOM"
+
+    # Renomeando os itens
+    mv "$item1" "$temp_nome"
+    mv "$item2" "$item1"
+    mv "$temp_nome" "$item2"
 }
 
 # function dominio_comprado { whois "$1" 2>/dev/null | grep -q 'Registrant' && echo "comprado." || echo "disponível." }
