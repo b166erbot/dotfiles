@@ -128,12 +128,14 @@ source ~/.bash_aliases
 
 # colocando a cor do terminal com pywal
 # primeiro rode wal -i /local/da/imagem.jpg
-if [ -e ~/.cache/wal/sequences ]
-then
-  (cat ~/.cache/wal/sequences &);
-  source ~/.cache/wal/colors-tty.sh
-else
-  echo rode o comando wal -i /local/da/imagem.jpg
+if [ "$USER" != "root" ]; then
+  if [ -e ~/.cache/wal/sequences ]
+  then
+    (cat ~/.cache/wal/sequences &);
+    source ~/.cache/wal/colors-tty.sh
+  else
+    echo rode o comando wal -i /local/da/imagem.jpg
+  fi
 fi
 
 #bem_vindo
