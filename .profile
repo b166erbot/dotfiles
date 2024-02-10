@@ -27,5 +27,5 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # rodando o agent ssh e o gnome keyring
-eval "$(ssh-agent -s)"
-gnome-keyring-daemon --start --components=ssh
+eval "$(ssh-agent -s)" &
+gnome-keyring-daemon --start --components=ssh &
