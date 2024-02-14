@@ -9,7 +9,7 @@ killall -q polybar
 
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-sleep 1
+sleep 2
 
 # Launch the bar
 polybar -q top -c "$DIR"/config.ini &

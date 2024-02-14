@@ -18,3 +18,18 @@ def main():
 
 
 main()
+
+# alias
+#set $feh exec --no-startup-id feh --bg-scale
+
+# switch workspace
+#bindsym $mod+1 workspace 1 ; $feh ~/wp/1.jpg
+#bindsym $mod+2 workspace 2 ; $feh ~/wp/2.jpg
+#bindsym $mod+3 workspace 3 ; $feh ~/wp/3.jpg
+#bindsym $mod+4 workspace 4 ; $feh ~/wp/4.jpg
+#bindsym $mod+5 workspace 5 ; $feh ~/wp/5.jpg
+#bindsym $mod+6 workspace 6 ; $feh ~/wp/6.jpg
+#bindsym $mod+7 workspace 7 ; $feh ~/wp/7.jpg
+#bindsym $mod+8 workspace 8 ; $feh ~/wp/8.jpg
+#bindsym $mod+9 workspace 9 ; $feh ~/wp/9.jpg
+#bindsym $mod+0 workspace 10 ; $feh ~/wp/10.jpg
