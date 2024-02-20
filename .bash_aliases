@@ -1,48 +1,49 @@
 # ALIASES
 
 alias config='git --git-dir=/home/none/.cfg/ --work-tree=/home/none' # git dotfiles
-alias portas_abertas='ss -atunpl'
+alias portas-abertas='ss -atunpl'
 alias ips='ip -c -br a'
-alias ver_tamanho='du -sh'
-alias tempo_de_inicializacao_dos_programas='systemd-analyze blame'
-alias git_parar_tracking='config rm --cached -r'
+alias ver-tamanho='du -sh'
+alias tempo-de-inicializacao-dos-programas='systemd-analyze blame'
+alias git-parar-tracking='config rm --cached -r'
 alias fucking='sudo'
 alias abrir='exo-open'
 alias variaveis='set'
-alias meu_ip='ip route get 1 | awk "{print \$7}"'
-alias editar_alias='nano ~/.bash_aliases'
-alias editar_alias_debian='nano ~/.bash_aliases_debian'
-alias editar_alias_arch='nano ~/.bash_aliases_arch'
-alias ver_processador='inxi -bGI'
-alias ver_processos='ps aux'
+alias meu-ip='ip route get 1 | awk "{print \$7}"'
+alias editar-alias='nano ~/.bash_aliases'
+alias editar-alias-debian='nano ~/.bash_aliases_debian'
+alias editar-alias-arch='nano ~/.bash_aliases_arch'
+alias ver-processador='inxi -bGI'
+alias ver-processos='ps aux'
 alias help='run-help'
-alias montar_e_transferir_musicas='python3 ~/python\ scripts/scripts/montar_celular_e_transferir_musicas.py'
-alias contar_arquivos_pastas='echo "$(ls -a | wc -l) - 2" | bc'
-alias ver_atalhos='scripts ver-atalhos'
-alias git_ver_rastreados='config ls-tree -r master --name-only'
-alias montar_celular='python3 ~/python\ scripts/scripts/_montar_celular.py --ip 3'
+alias montar-e-transferir-musicas='python3 ~/python\ scripts/scripts/montar_celular_e_transferir_musicas.py'
+alias contar-arquivos-pastas='echo "$(ls -a | wc -l) - 2" | bc'
+alias ver-atalhos='scripts ver-atalhos'
+alias git-ver-rastreados='config ls-tree -r master --name-only'
+alias montar-celular='python3 ~/python\ scripts/scripts/_montar_celular.py --ip 3'
 alias substituir='mv -f'
 alias chat='shell-genie ask'
-alias mover_e_alterar_dono='fucking `which scripts` mover-e-alterar-dono'
-alias ver_arquitetura_pro='uname -m'
-alias atualizar_shell='source ~/.zshrc'
-alias remover_exif='mogrify -strip'
-alias trocar_usuario='dm-tool switch-to-greeter'
-alias configuracoes_xfce4='xfce4-settings-manager'
-alias escanear_pc='fucking clamscan --recursive=yes --infected --exclude-dir="/(usr/share|proc|sys|dev|run|tmp|var/tmp|mnt|media)|/home/none/(\.cache|\.mozilla)|/home/ivone/(\.cache|\.mozilla)"  /'
-alias ultimo_container='python3 ~/ferramentas_usuario/nome_ultimo_container.py'
-alias rodar_imagem_docker='fucking docker run -it'
-alias listar_todos_os_containers_dockers='fucking docker ps -a'
-alias remover_todos_os_containers_parados='fucking docker container prune -f'
-alias rodar_ultimo_container_ativo='fucking docker exec -it `ultimo_container` bash'
-alias parar_ultimo_container='fucking docker stop `ultimo_container`'
-alias remover_ultimo_container='fucking docker remove `ultimo_container`'
-alias ativar_e_rodar_ultimo_container='ativar_e_rodar_container `ultimo_container` bash'
-alias conectar_vpn='python3 ~/ferramentas_usuario/conectar_vpn.py'
-alias desconectar_vpn='python3 ~/ferramentas_usuario/desconectar_vpn.py'
-alias baixar_pasta_via_http='wget -r -np -nH --cut-dirs=3 -R index.html'
-alias converter_imagem='convert -resize 200x200 -quality 72'
-alias tarball_sem_compressao='tar -cvf'
+alias mover-e-alterar-dono='fucking `which scripts` mover-e-alterar-dono'
+alias ver-arquitetura-pro='uname -m'
+alias atualizar-shell='source ~/.zshrc'
+alias remover-exif='mogrify -strip'
+alias trocar-usuario='dm-tool switch-to-greeter'
+alias configuracoes-xfce4='xfce4-settings-manager'
+alias escanear-pc='fucking clamscan --recursive=yes --infected --exclude-dir="/(usr/share|proc|sys|dev|run|tmp|var/tmp|mnt|media)|/home/none/(\.cache|\.mozilla)|/home/ivone/(\.cache|\.mozilla)"  /'
+alias ultimo-container='python3 ~/ferramentas_usuario/nome_ultimo_container.py'
+alias rodar-imagem-docker='fucking docker run -it'
+alias listar-todos-os-containers-dockers='fucking docker ps -a'
+alias remover-todos-os-containers-parados='fucking docker container prune -f'
+alias rodar-ultimo-container-ativo='fucking docker exec -it `ultimo-container` bash'
+alias parar-ultimo-container='fucking docker stop `ultimo-container`'
+alias remover-ultimo-container='fucking docker remove `ultimo-container`'
+alias ativar-e-rodar-ultimo-container='ativar-e-rodar-container `ultimo-container` bash'
+alias conectar-vpn='python3 ~/ferramentas_usuario/conectar_vpn.py'
+alias desconectar-vpn='python3 ~/ferramentas_usuario/desconectar_vpn.py'
+alias baixar-pasta-via-http='wget -r -np -nH --cut-dirs=3 -R index.html'
+alias converter-imagem='convert -resize 200x200 -quality 72'
+alias tarball-sem-compressao='tar -cvf'
+alias atualizar-sistema='fucking do-release-upgrade'
 
 # FUNÇÕES
 
@@ -50,23 +51,23 @@ procurar(){
 find $2 -iname $1
 }
 
-arquivos_ocultos(){
+arquivos-ocultos(){
 find $1 -iname '.*' -type f
 }
 
-pastas_ocultas(){
+pastas-ocultas(){
 find $1 -iname '.*' -type d
 }
 
-pastas_vazias(){
+pastas-vazias(){
 find $1 -type d -empty
 }
 
-arquivos_vazios(){
+arquivos-vazios(){
 find $1 -type f -empty
 }
 
-arquivos_executaveis(){
+arquivos-executaveis(){
 find $1 -perm /a=x -type f
 }
 
@@ -93,19 +94,19 @@ descompactar()
   fi
 }
 
-baixar_musica(){
+baixar-musica(){
 yt-dlp -f 'ba' -x --audio-format mp3 --embed-thumbnail "$1" -o '%(title)s.mp3'
 }
 
-historico_programas_desinstalados(){
+historico-programas-desinstalados(){
 tail -n $1 /var/log/apt/history.log
 }
 
-remover_recursivamente(){
+remover-recursivamente(){
     find "$2" -name "$1" -exec rm -rf {} \; 2>/dev/null
 }
 
-atualizar_pywal() {
+atualizar-pywal() {
     if [ -e ~/.cache/wal/sequences ]
     then
         (cat ~/.cache/wal/sequences &);
@@ -115,22 +116,22 @@ atualizar_pywal() {
     fi
 }
 
-criar_imagem_docker() {
+criar-imagem-docker() {
     fucking docker build -t $1 . -f $2
 }
 
-ativar_e_rodar_container() {
+ativar-e-rodar-container() {
     fucking docker start $1
     fucking docker exec -it $1 $2
 }
 
-remover_dados_exif() {
+remover-dados-exif() {
   convert $1 -strip $2
 }
 
-trocar_nomes() {
+trocar-nomes() {
     if [ $# -ne 2 ]; then
-        echo "Uso: trocar_nomes item1 item2"
+        echo "Uso: trocar-nomes item1 item2"
         return 1
     fi
 

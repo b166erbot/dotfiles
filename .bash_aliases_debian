@@ -1,18 +1,18 @@
 # ALIASES
 
-alias de_qual_pacote_e='dpkg -S'
-alias versao_sistema='lsb_release -a'
-alias ver_conexões_de_rede='nmcli connection show --active'
+alias de-qual-pacote-e='dpkg -S'
+alias versao-sistema='lsb_release -a'
+alias ver-conexões-de-rede='nmcli connection show --active'
 
 
 # FUNÇÕES
 
-mostrar_binarios(){
+mostrar-binarios(){
 dpkg -L $1 | grep -E "/bin/|/sbin/|/usr/bin/|/usr/sbin/" | cut -d' ' -f1
 }
 
 
 # passar pasta já criada para essa função.
-criar_ambiente_isolado_debian() {
+criar-ambiente-isolado-debian() {
 sudo debootstrap stable $1 http://deb.debian.org/debian
 }

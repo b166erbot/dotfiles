@@ -209,6 +209,7 @@ for_window [class="Thunar"] floating enable resize set 770 500
 # for_window [class="Simple-scan"] floating enable
 for_window [class="Ristretto"] floating enable resize set 900 500
 for_window [class="Todo List"] floating enable
+for_window [class="Chromium"] floating enable
 
 #### minhas cores
 # class                 border  backgr. text    indicator child_border
@@ -266,7 +267,7 @@ exec_always ~/notificacao/notificacao.sh
 exec_always flameshot
 
 # executando o clipman, um programa que arruma o a área de transferência no i3
-exec_always "bash -c 'if [ -z $(pidof xfce4-clipman) ]; then xfce4-clipman; fi'"
+# exec_always "bash -c 'if [ -z $(pidof xfce4-clipman) ]; then xfce4-clipman; fi'"
 
 # executando o applet de rede
 # exec_always nm-applet
