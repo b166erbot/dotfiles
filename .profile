@@ -27,5 +27,11 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # rodando o agent ssh e o gnome keyring
+#gnome-keyring-daemon --replace --components=pkcs11,secrets,ssh --control-directory=/run/user/1000/keyring &
 eval "$(ssh-agent -s)"
-gnome-keyring-daemon --components=ssh &
+: "${XDG_RUNTIME_DIR:=/run/user/$UID}"
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/keyring/ssh
+
+
+# alterando o tema do gtk
+export GTK_THEME=Adwaita-dark

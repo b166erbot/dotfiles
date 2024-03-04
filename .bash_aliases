@@ -42,7 +42,6 @@ alias conectar-vpn='python3 ~/ferramentas_usuario/conectar_vpn.py'
 alias desconectar-vpn='python3 ~/ferramentas_usuario/desconectar_vpn.py'
 alias baixar-pasta-via-http='wget -r -np -nH --cut-dirs=3 -R index.html'
 alias converter-imagem='convert -resize 200x200 -quality 72'
-alias tarball-sem-compressao='tar -cvf'
 alias atualizar-sistema='fucking do-release-upgrade'
 
 # FUNÇÕES
@@ -145,6 +144,13 @@ trocar-nomes() {
     mv "$item1" "$temp_nome"
     mv "$item2" "$item1"
     mv "$temp_nome" "$item2"
+}
+
+function compactar() {
+    nome=$1
+    shift
+    resto=("$@")
+    tar -cvzf $nome.tar.gz "${resto[@]}"
 }
 
 # function dominio_comprado { whois "$1" 2>/dev/null | grep -q 'Registrant' && echo "comprado." || echo "disponível." }
