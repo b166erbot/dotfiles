@@ -43,6 +43,7 @@ alias desconectar-vpn='python3 ~/ferramentas_usuario/desconectar_vpn.py'
 alias baixar-pasta-via-http='wget -r -np -nH --cut-dirs=3 -R index.html'
 alias converter-imagem='convert -resize 200x200 -quality 72'
 alias atualizar-sistema='fucking do-release-upgrade'
+alias copiar-transferencia='xclip -selection clipboard <'
 
 # FUNÇÕES
 
