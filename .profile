@@ -35,3 +35,9 @@ export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/keyring/ssh
 
 # alterando o tema do gtk
 export GTK_THEME=Adwaita-dark
+. "$HOME/.cargo/env"
+
+# configurando o qt para ficar no modo dark.
+# necessário instalar o programa qt5-style-plugins e configurar a linha
+# style=gtk2
+export QT_QPA_PLATFORMTHEME=qt5ct

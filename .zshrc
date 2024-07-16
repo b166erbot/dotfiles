@@ -143,8 +143,11 @@ function tema-pywal() {
 
 tema-pywal
 
-#bem_vindo
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Necessário para auto-complete do comando trybe-publisher
+source /etc/bash_completion.d/trybe-publisher
+
+#bem_vindo

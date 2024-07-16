@@ -140,3 +140,4 @@ export PATH=$PATH:/usr/bin/snap
 export PYTHONSTARTUP=/home/none/.pythonrc
 
 # sources
+. "$HOME/.cargo/env"
